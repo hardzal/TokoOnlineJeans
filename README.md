@@ -19,13 +19,14 @@
 #### Tampilan
  - [ ] Login
  - [ ] Register
+ - [X] Tampilan CRUD Collection [Admin]
+ - [X] Tampilan CRUD Catalog [Admin]
+ - [ ] Tampilan CRUD Order [Admin]
  - [ ] Tampilan Collection (Product) 
- - [ ] Tampilan Filtering Product
  - [ ] Tampilan Halaman Depan (Home)
  - [ ] Tampilan Order [Customer]
  - [ ] Tampilan Checkout Payment Order [Customer]
  - [ ] Tampilan Status Order [Customer]
+ - [ ] Tampilan Filtering Product
  - [ ] Tampilan Profile Perusahaan 
- - [ ] Tampilan CRUD Collection [Admin]
- - [ ] Tampilan CRUD Catalog [Admin]
- - [ ] Tampilan CRUD Order [Admin]
+
