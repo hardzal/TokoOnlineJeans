@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class UserRole_Model extends CI_Model
+class Collection_Model extends CI_Model
 {
-	protected const TABLE_NAME = "user_roles";
+	protected const TABLE_NAME = "faqs";
 
 	public function getAll()
 	{
