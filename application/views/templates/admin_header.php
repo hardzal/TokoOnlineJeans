@@ -72,7 +72,11 @@
                             </li>
                             <li>
                             	<a class="nav-link" href="<?=base_url();?>Admin/pembayaran" aria-expanded="false"><i class="fa fa-fw fa-credit-card"></i>Data Pembayaran</a>
-                            </li>	
+                            </li>
+                            <li>
+                                <a class="nav-link" href="<?=base_url();?>Admin/order" aria-expanded="false"><i class="fa fa-fw fa-list"></i>Data Order</a>
+                            </li>
+                            	
                             <li class="nav-divider">
                                 Master Data
                             </li>

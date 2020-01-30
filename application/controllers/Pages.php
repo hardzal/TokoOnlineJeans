@@ -7,4 +7,10 @@ class Pages extends CI_Controller
 	{
 		parent::__construct();
 	}
+
+	public function index(){
+		$this->load->view("templates/header");
+		$this->load->view("home");
+		$this->load->view("templates/footer");
+	}
 }
