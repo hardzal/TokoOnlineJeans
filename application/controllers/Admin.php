@@ -43,4 +43,10 @@ class Admin extends CI_Controller
 		$this->load->view("admin/pembayaran");
 		$this->load->view("templates/admin_footer");
 	}
+
+	public function order(){
+		$this->load->view("templates/admin_header");
+		$this->load->view("admin/order");
+		$this->load->view("templates/admin_footer");
+	}
 }

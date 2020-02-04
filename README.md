@@ -17,11 +17,11 @@
 
 ## Concept Admin Template
 #### Tampilan
- - [ ] Login
- - [ ] Register
- - [X] Tampilan CRUD Collection [Admin]
- - [X] Tampilan CRUD Catalog [Admin]
- - [ ] Tampilan CRUD Order [Admin]
+ - [x] Tampilan Login
+ - [x] Tampilan Register 
+ - [x] Tampilan CRUD Collection [Admin]
+ - [x] Tampilan CRUD Catalog [Admin]
+ - [x] Tampilan CRUD Order [Admin] -> belum fix
  - [ ] Tampilan Collection (Product) 
  - [ ] Tampilan Halaman Depan (Home)
  - [ ] Tampilan Order [Customer]

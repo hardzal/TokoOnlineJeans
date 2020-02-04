@@ -31,15 +31,15 @@
                         <div class="card">
                             <div class="card-header">
                                 <!-- Button trigger modal -->
-                                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ModalCreate">
+                                <!-- <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ModalCreate">
                                     Tambahkan Data
-                                </a>
+                                </a> -->
                                 <!-- Modal -->
                                 <div class="modal fade" id="ModalCreate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h3 class="modal-title" id="exampleModalLabel">Tambahkan Data</h3>
+                                                <h3 class="modal-title" id="exampleModalLabel">Edit Data</h3>
                                                 <a href="#" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </a>
@@ -155,8 +155,7 @@
                                                 <th>Position</th>
                                                 <th>Office</th>
                                                 <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
+                                                <th colspan="2">Start date</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -165,8 +164,8 @@
                                                 <td>System Architect</td>
                                                 <td>Edinburgh</td>
                                                 <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
+                                                <td class="text-center" ><a class="btn btn-xs btn-warning" href="#" data-toggle="modal" data-target="#ModalCreate">Edit</a></td>
+                                                <td class="text-center"><a class="btn btn-xs btn-danger" href="">Hapus</a></td>
                                             </tr>
                                             <tr>
                                                 <td>Garrett Winters</td>

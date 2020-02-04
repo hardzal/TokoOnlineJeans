@@ -90,8 +90,7 @@
                                                 <th>Position</th>
                                                 <th>Office</th>
                                                 <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
+                                                <th colspan="2">Start date</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -100,8 +99,8 @@
                                                 <td>System Architect</td>
                                                 <td>Edinburgh</td>
                                                 <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
+                                                <td class="text-center" ><a class="btn btn-xs btn-warning" href="#" data-toggle="modal" data-target="#ModalCreate">Edit</a></td>
+                                                <td class="text-center"><a class="btn btn-xs btn-danger" href="">Hapus</a></td>
                                             </tr>
                                             <tr>
                                                 <td>Garrett Winters</td>
