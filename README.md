@@ -30,3 +30,7 @@
  - [ ] Tampilan Filtering Product
  - [ ] Tampilan Profile Perusahaan 
 
+-------------
+# User Login
+- admin:secret [admin]
+- customer:password [customer]

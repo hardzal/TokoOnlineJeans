@@ -7,4 +7,9 @@ class Customer extends CI_Controller
 	{
 		parent::__construct();
 	}
+
+	public function index()
+	{
+		echo "hello, customer?";
+	}
 }
