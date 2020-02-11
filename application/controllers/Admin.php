@@ -8,43 +8,45 @@ class Admin extends CI_Controller
 		parent::__construct();
 	}
 
-	public function index(){
-		$this->load->view("templates/admin_header");
-		$this->load->view("admin/dashboard");
+	public function index()
+	{
+		$data['title'] = "Dashboard";
+
+		$this->load->view("templates/admin_header", $data);
+		$this->load->view("admin/dashboard", $data);
 		$this->load->view("templates/admin_footer");
 	}
 
-	public function katalog(){
-		$this->load->view("templates/admin_header");
-		$this->load->view("admin/katalog");
-		$this->load->view("templates/admin_footer");
-	}
-
-	public function koleksi(){
+	public function koleksi()
+	{
 		$this->load->view("templates/admin_header");
 		$this->load->view("admin/koleksi");
 		$this->load->view("templates/admin_footer");
 	}
 
-	public function set_admin(){
+	public function set_admin()
+	{
 		$this->load->view("templates/admin_header");
 		$this->load->view("admin/set_admin");
 		$this->load->view("templates/admin_footer");
 	}
 
-	public function set_user(){
+	public function set_user()
+	{
 		$this->load->view("templates/admin_header");
 		$this->load->view("admin/set_user");
 		$this->load->view("templates/admin_footer");
 	}
 
-	public function pembayaran(){
+	public function pembayaran()
+	{
 		$this->load->view("templates/admin_header");
 		$this->load->view("admin/pembayaran");
 		$this->load->view("templates/admin_footer");
 	}
 
-	public function order(){
+	public function order()
+	{
 		$this->load->view("templates/admin_header");
 		$this->load->view("admin/order");
 		$this->load->view("templates/admin_footer");

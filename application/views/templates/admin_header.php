@@ -5,7 +5,7 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>ADMIN</title>
+	<title><?php echo $title; ?> | ADMIN</title>
 	<link rel="stylesheet" href="<?= base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css">
 	<link href="<?= base_url(); ?>assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?= base_url(); ?>assets/libs/css/style.css">
@@ -96,7 +96,7 @@
 								</div>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="<?= base_url(); ?>Admin/katalog"><i class="fas fa-fw fa-tags"></i>Data Katalog</a>
+								<a class="nav-link" href="<?= base_url(); ?>Catalog"><i class="fas fa-fw fa-tags"></i>Data Katalog</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="<?= base_url(); ?>Admin/koleksi"><i class="fas fa-fw fa-list-alt"></i>Data Koleksi</a>

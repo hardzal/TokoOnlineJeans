@@ -8,7 +8,6 @@ class Auth extends CI_Controller
 		parent::__construct();
 
 		$this->load->model('Auth_model', 'auth');
-		$this->load->helper('ci');
 	}
 
 	public function index()

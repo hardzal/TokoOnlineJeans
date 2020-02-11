@@ -1,14 +1,13 @@
 # TokoOnlineJeans
 #### Fitur
-- [ ] Register [Customer] 
-- [ ] Login [Admin, Customer]
-- [ ] Menu Shopping Cart
-- [ ] Menu Promo 
-- [ ] Menu Q&A via WhatsApp
-  - Form Q&A
+- [x] Register [Customer] 
+- [x] Login [Admin, Customer]
 - [ ] CRUD Collection
 - [ ] CRUD Catalog 
 - [ ] CRUD Order
+- [ ] Menu Shopping Cart
+- [ ] Menu Promo 
+- [ ] Menu Q&A via WhatsApp
 - [ ] CRUD Payment
 - [ ] CRUD Profile
 - [ ] Tampilan Product
