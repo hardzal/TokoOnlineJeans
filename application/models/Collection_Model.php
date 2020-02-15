@@ -7,12 +7,22 @@ class Collection_Model extends CI_Model
 
 	public function getAll()
 	{
-		return $this->db->get($this::TABLE_NAME)->result_object();
+		return $this->db
+			->select('collections.*, catalogs.name AS catalog_name')
+			->from($this::TABLE_NAME)
+			->join('catalogs', 'collections.catalog_id = catalogs.id')
+			->get()->result_object();
 	}
 
 	public function get($id)
 	{
-		return $this->db->get_where($this::TABLE_NAME, ['id' => $id])->row_object();
+		return $this->db
+			->select('collections.*, catalogs.name AS catalog_name')
+			->from($this::TABLE_NAME)
+			->join('catalogs', 'collections.catalog_id=catalogs.id')
+			->where('collections.id', $id)
+			->get()
+			->row_object();
 	}
 
 	public function insert($data)

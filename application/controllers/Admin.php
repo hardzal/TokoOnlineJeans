@@ -17,13 +17,6 @@ class Admin extends CI_Controller
 		$this->load->view("templates/admin_footer");
 	}
 
-	public function koleksi()
-	{
-		$this->load->view("templates/admin_header");
-		$this->load->view("admin/koleksi");
-		$this->load->view("templates/admin_footer");
-	}
-
 	public function set_admin()
 	{
 		$this->load->view("templates/admin_header");
@@ -50,5 +43,15 @@ class Admin extends CI_Controller
 		$this->load->view("templates/admin_header");
 		$this->load->view("admin/order");
 		$this->load->view("templates/admin_footer");
+	}
+
+	public function katalog()
+	{
+		redirect('admin/katalog');
+	}
+
+	public function koleksi()
+	{
+		redirect('admin/koleksi');
 	}
 }

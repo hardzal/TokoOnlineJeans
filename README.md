@@ -33,3 +33,6 @@
 # User Login
 - admin:secret [admin]
 - customer:password [customer]
+
+---
+custom 404 pages?

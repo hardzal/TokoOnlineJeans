@@ -36,7 +36,6 @@ class Catalog extends CI_Controller
 
 	public function edit($id)
 	{
-		$data['title'] = "Daftar Katalog";
 		$catalog = $this->catalog->get($id);
 		$this->form_validation->set_rules('nama', 'Nama Kategori', 'required|trim|min_length[3]');
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim|min_length[5]');
@@ -45,7 +44,7 @@ class Catalog extends CI_Controller
 			if ($this->input->post('id', true)) {
 				echo json_encode($catalog);
 			} else {
-				redirect('catalog/id');
+				redirect('catalog/index');
 			}
 		} else {
 			$id = $this->input->post('id');
@@ -58,7 +57,7 @@ class Catalog extends CI_Controller
 			if ($this->catalog->update($data, $id)) {
 				flash_message('success', '<strong>Berhasil</strong> <em>memperbaharui</em> data katalog', 'catalog/index');
 			} else {
-				flash_message('danger', '<strong>Gagal</strong> <em>menambahkan</em> data katalog', 'catalog/index');
+				flash_message('danger', '<strong>Gagal</strong> <em>memperbaharui</em> data katalog', 'catalog/index');
 			}
 		}
 	}
