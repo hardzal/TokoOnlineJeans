@@ -17,7 +17,7 @@
     <!-- ============================================================== -->
     <!-- <div class="dashboard-main-wrapper"> -->
     	<!-- navbar -->
-    	<div class="header container-fluid" style="border: groove;">
+    	<div class="header container-fluid">
             <div class="row bg-dark text-center px-4 py-1">
                 <div class="col-sm-4 col-sm-2">
                     <a href="#"><img class="img-fluid" src="<?=base_url("assets/images/logo.jpeg")?>"></a> 

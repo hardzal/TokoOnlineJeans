@@ -21,13 +21,15 @@
  - [x] Tampilan CRUD Collection [Admin]
  - [x] Tampilan CRUD Catalog [Admin]
  - [x] Tampilan CRUD Order [Admin] -> belum fix
- - [ ] Tampilan Collection (Product) 
- - [ ] Tampilan Halaman Depan (Home)
- - [ ] Tampilan Order [Customer]
- - [ ] Tampilan Checkout Payment Order [Customer]
+ - [x] Tampilan Collection (Product) 
+ - [x] Tampilan Halaman Depan (Home)
+ - [x] Tampilan Order [Customer]
+ - [x] Tampilan Checkout Payment Order [Customer]
  - [ ] Tampilan Status Order [Customer]
  - [ ] Tampilan Filtering Product
  - [ ] Tampilan Profile Perusahaan 
+ - [ ] Tampilan Q&A
+ - [ ] Tampilan PromoKuy
 
 -------------
 # User Login
