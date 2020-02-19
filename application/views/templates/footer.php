@@ -1,4 +1,7 @@
-	</div>
+
+    <div class="footer bg-dark text-center">
+        <p>Copyright by &copy;</p>  
+    </div>
 
 	<!-- Optional JavaScript -->
     <script src="<?=base_url();?>assets/vendor/jquery/jquery-3.3.1.min.js"></script>
