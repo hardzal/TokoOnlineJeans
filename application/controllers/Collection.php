@@ -10,7 +10,11 @@ class Collection extends CI_Controller
 		$this->load->model('Catalog_Model', 'catalog');
 	}
 
-	public function index()
+	public function index() {
+		
+	}
+
+	public function list()
 	{
 		$data['title'] = "Data Koleksi";
 		$data['collections'] = $this->collection->getAll();
@@ -72,7 +76,6 @@ class Collection extends CI_Controller
 			if ($this->input->post('id')) {
 				echo json_encode($this->collection->get($this->input->post('id', true)));
 			} else {
-				die(var_dump($_POST));
 				redirect('admin/koleksi');
 			}
 		} else {
@@ -109,7 +112,7 @@ class Collection extends CI_Controller
 
 				$data['img'] = $image_name;
 			}
-			// die(var_dump($collection_id));
+
 			if ($this->collection->update($data, $collection_id)) {
 				flash_message('success', '<strong>Berhasil</strong> <em>memperbaharui</em> data koleksi barang!', 'admin/koleksi');
 			} else {

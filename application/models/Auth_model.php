@@ -48,20 +48,29 @@ class Auth_model extends CI_Model
 		$this->db->insert('user_details', $data['user_details']);
 		$this->db->trans_complete();
 
+		if ($this->session->userdata('user_id') == $this::ROLE_ADMIN) {
+			$url = base_url('user/index');
+			$message = 'Berhasil menambahkan data customer!';
+		} else {
+			$url = base_url('auth/register');
+			$message = 'Successfully to register!, you can <a href="' . base_url('auth/login') . '">Login</a> now';
+		}
+
 		if ($this->db->trans_status() == FALSE) {
 			$this->db->trans_rollback();
+
 			return [
 				'result' => false,
-				'message' => 'failed to register, ask to admin',
-				'url' => base_url('auth/register'),
+				'message' => 'Gagal mendaftar sebagai customer',
+				'url' => $url,
 			];
 		} else {
 			$this->db->trans_commit();
 
 			return [
 				'result' => true,
-				'message' => 'Successfully to register!, you can <a href="' . base_url('auth/login') . '">Login</a> now',
-				'url' => base_url('auth/register'),
+				'message' => $message,
+				'url' => $url,
 			];
 		}
 	}

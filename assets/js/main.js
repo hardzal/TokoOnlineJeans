@@ -1,9 +1,12 @@
 $(document).ready(function () {
-	document.querySelector('.custom-file-input').addEventListener('change', function (e) {
-		var fileName = document.getElementById("customFile").files[0].name;
-		var nextSibling = e.target.nextElementSibling;
-		nextSibling.innerText = fileName;
-	});
+
+	if (document.querySelector('.custom-file-input')) {
+		document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+			var fileName = document.getElementById("customFile").files[0].name;
+			var nextSibling = e.target.nextElementSibling;
+			nextSibling.innerText = fileName;
+		});
+	}
 
 	$("#tambahKatalog").on('click', function (e) {
 		e.preventDefault();
@@ -14,7 +17,7 @@ $(document).ready(function () {
 		$('#catalogForm')[0].reset();
 	});
 
-	$('.editCatalog').on('click', function (e) {
+	$(".editCatalog").on('click', function (e) {
 		e.preventDefault();
 		const link = $(this).data('link');
 		const catalog_id = $(this).data('id');
@@ -49,6 +52,7 @@ $(document).ready(function () {
 
 	$('.editCollection').on('click', function (e) {
 		e.preventDefault();
+
 		const link = $(this).data('link');
 		const collection_id = $(this).data('id');
 
@@ -70,6 +74,46 @@ $(document).ready(function () {
 				$('#stok').val(data.stock);
 				$('#deskripsi').val(data.description);
 				$('#koleksi_id').val(data.id);
+			}
+		});
+	});
+
+	$('#tambahUser').on('click', function (e) {
+		e.preventDefault();
+		const link = $(this).data('link');
+
+		$('#userForm').prop('action', link);
+
+		$('.user-modal-title').html("Tambah data customer");
+		$('#userForm')[0].reset();
+	});
+
+	$('.editUser').on('click', function (e) {
+		e.preventDefault();
+
+		const link = $(this).data('link');
+		const user_id = $(this).data('id');
+
+		$('#userForm').prop('action', link);
+		$('.user-modal-title').html("Edit data customer");
+		$('#userForm')[0].reset();
+
+		$.ajax({
+			url: link,
+			data: {
+				id: user_id
+			},
+			method: 'POST',
+			dataType: 'json',
+			success: function (data) {
+				$('#password').prop('required', false);
+				$('#username').val(data.username);
+				$('#email').val(data.email);
+				$('#nama_lengkap').val(data.nama_lengkap);
+				$('#telepon').val(data.telp);
+				$('#alamat').val(data.alamat);
+				$('input[type="radio"][name="jenis-kelamin"][value="' + data.jenis_kelamin + '"').prop('checked', true);
+				$('#user_id').val(data.id);
 			}
 		});
 	});

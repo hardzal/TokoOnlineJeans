@@ -72,7 +72,7 @@
 							<li class="nav-item ">
 								<a class="nav-link" href="<?= base_url(); ?>Admin" aria-expanded="false"><i class="fa fa-fw fa-info"></i>Dashboard</a>
 							</li>
-							<li>
+							<li class="nav-item">
 								<a class="nav-link" href="<?= base_url(); ?>Admin/pembayaran" aria-expanded="false"><i class="fa fa-fw fa-credit-card"></i>Data Pembayaran</a>
 							</li>
 							<li>
@@ -83,17 +83,7 @@
 								Master Data
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fas fa-fw fa-cog"></i>Kelola Akun</a>
-								<div id="submenu-6" class="collapse submenu">
-									<ul class="nav flex-column">
-										<li class="nav-item">
-											<a class="nav-link" href="<?= base_url(); ?>Admin/set_admin"><i class="fa fa-fw fa-user-secret"></i>Admin</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="<?= base_url(); ?>Admin/set_user"><i class="fa fa-fw fa-users"></i>User</a>
-										</li>
-									</ul>
-								</div>
+								<a class="nav-link" href="<?= base_url(); ?>user/index"><i class="fa fa-fw fa-users"></i>Data Customer</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="<?= base_url(); ?>admin/katalog"><i class="fas fa-fw fa-tags"></i>Data Katalog</a>

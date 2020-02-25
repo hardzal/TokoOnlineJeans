@@ -76,6 +76,7 @@ class Auth extends CI_Controller
 					'telp' => $telp,
 				],
 			];
+			
 			$result = $this->auth->register($data);
 			if ($result['result']) {
 				flash_message('success', $result['message'], $result['url']);

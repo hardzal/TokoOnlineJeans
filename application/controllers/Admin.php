@@ -17,20 +17,6 @@ class Admin extends CI_Controller
 		$this->load->view("templates/admin_footer");
 	}
 
-	public function set_admin()
-	{
-		$this->load->view("templates/admin_header");
-		$this->load->view("admin/set_admin");
-		$this->load->view("templates/admin_footer");
-	}
-
-	public function set_user()
-	{
-		$this->load->view("templates/admin_header");
-		$this->load->view("admin/set_user");
-		$this->load->view("templates/admin_footer");
-	}
-
 	public function pembayaran()
 	{
 		$this->load->view("templates/admin_header");

@@ -2,14 +2,15 @@
 #### Fitur
 - [x] Register [Customer] 
 - [x] Login [Admin, Customer]
-- [ ] CRUD Collection
-- [ ] CRUD Catalog 
+- [x] CRUD Collection
+- [x] CRUD Catalog 
+- [ ] CRUD Q&A
+- [ ] CRUD Profile
 - [ ] CRUD Order
+- [ ] CRUD Payment
 - [ ] Menu Shopping Cart
 - [ ] Menu Promo 
 - [ ] Menu Q&A via WhatsApp
-- [ ] CRUD Payment
-- [ ] CRUD Profile
 - [ ] Tampilan Product
 - [ ] Filter Product
 - [ ] Profil Perusahaan

@@ -11,6 +11,10 @@ class Catalog extends CI_Controller
 
 	public function index()
 	{
+	}
+
+	public function list()
+	{
 		$data['title'] = "Daftar Katalog";
 		$data['catalogs'] = $this->catalog->getAll();
 		$this->form_validation->set_rules('nama', 'Nama Kategori', 'required|trim|min_length[3]');
@@ -27,9 +31,9 @@ class Catalog extends CI_Controller
 			];
 
 			if ($this->catalog->insert($data)) {
-				flash_message('success', '<strong>Berhasil</strong> <em>menambahkan</em> data katalog', 'catalog/index');
+				flash_message('success', '<strong>Berhasil</strong> <em>menambahkan</em> data katalog', 'catalog/list');
 			} else {
-				flash_message('danger', '<strong>Gagal</strong> <em>menambahkan</em> data katalog', 'catalog/index');
+				flash_message('danger', '<strong>Gagal</strong> <em>menambahkan</em> data katalog', 'catalog/list');
 			}
 		}
 	}
@@ -55,9 +59,9 @@ class Catalog extends CI_Controller
 			];
 
 			if ($this->catalog->update($data, $id)) {
-				flash_message('success', '<strong>Berhasil</strong> <em>memperbaharui</em> data katalog', 'catalog/index');
+				flash_message('success', '<strong>Berhasil</strong> <em>memperbaharui</em> data katalog', 'catalog/list');
 			} else {
-				flash_message('danger', '<strong>Gagal</strong> <em>memperbaharui</em> data katalog', 'catalog/index');
+				flash_message('danger', '<strong>Gagal</strong> <em>memperbaharui</em> data katalog', 'catalog/list');
 			}
 		}
 	}
@@ -65,9 +69,9 @@ class Catalog extends CI_Controller
 	public function delete($id)
 	{
 		if ($this->catalog->delete($id)) {
-			flash_message('success', '<strong>Berhasil</strong> <em>menghapus</em> data katalog', 'catalog/index');
+			flash_message('success', '<strong>Berhasil</strong> <em>menghapus</em> data katalog', 'catalog/list');
 		} else {
-			flash_message('success', '<strong>Gagal</strong> <em>menghapus</em> data katalog', 'catalog/index');
+			flash_message('success', '<strong>Gagal</strong> <em>menghapus</em> data katalog', 'catalog/list');
 		}
 	}
 }

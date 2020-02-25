@@ -30,7 +30,7 @@
 					<div class="card">
 						<div class="card-header">
 							<!-- Button trigger modal -->
-							<a href="" data-link="<?php echo base_url('catalog/index'); ?>" class="btn btn-success" data-toggle="modal" id="tambahKatalog" data-target="#ModalCatalog">
+							<a href="<?php echo base_url('catalog/index'); ?>" data-link="<?php echo base_url('catalog/index'); ?>" class="btn btn-success" data-toggle="modal" id="tambahKatalog" data-target="#ModalCatalog">
 								Tambahkan Data
 							</a>
 							<!-- Modal -->
@@ -39,7 +39,7 @@
 									<form class="needs-validation" method="POST" action="" id="catalogForm">
 										<div class="modal-content">
 											<div class="modal-header">
-												<h3 class="modal-title-catalog" id="CatalogModal">Tambahkan Data</h3>
+												<h3 class="catalog-modal-title" id="CatalogModal">Tambahkan Data</h3>
 												<a href="#" class="close" data-dismiss="modal" aria-label="Close">
 													<span aria-hidden="true">&times;</span>
 												</a>
@@ -53,7 +53,7 @@
 															<!-- Looks good! -->
 														</div>
 														<div class="invalid-feedback">
-															<?php echo form_error('username', '<small class="text-danger">', '</small>'); ?>
+															<?php echo form_error('nama', '<small class="text-danger">', '</small>'); ?>
 														</div>
 													</div>
 
@@ -105,8 +105,8 @@
 													<td><?php echo $catalog->name; ?></td>
 													<td><?php echo $catalog->description; ?></td>
 													<td class="text-center">
-														<a class="btn btn-xs btn-warning editCatalog" href="<?php echo base_url('catalog/edit/') . $catalog->id; ?>" data-toggle="modal" data-target="#ModalCatalog" data-link="<?php echo base_url('catalog/edit/') . $catalog->id; ?>" data-id="<?php echo $catalog->id; ?>">Edit</a>
-														<a class="btn btn-xs btn-danger" href="<?php echo base_url('catalog/delete/') . $catalog->id; ?>" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?')">Hapus</a>
+														<a class="btn btn-xs btn-warning editCatalog mr-3" href="<?php echo base_url('catalog/edit/') . $catalog->id; ?>" data-toggle="modal" data-target="#ModalCatalog" data-link="<?php echo base_url('catalog/edit/') . $catalog->id; ?>" data-id="<?php echo $catalog->id; ?>">Edit</a>
+														<a class="btn btn-xs btn-danger" href="<?php echo base_url('catalog/delete/') . $catalog->id; ?>" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?')">Hapus</a><a class="btn btn-xs btn-danger" href="<?php echo base_url('catalog/delete/') . $catalog->id; ?>" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?')">Hapus</a>
 													</td>
 												</tr>
 											<?php endforeach; ?>
