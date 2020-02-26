@@ -4,7 +4,7 @@
 - [x] Login [Admin, Customer]
 - [x] CRUD Collection
 - [x] CRUD Catalog 
-- [ ] CRUD Q&A
+- [x] CRUD Q&A
 - [ ] CRUD Profile
 - [ ] CRUD Order
 - [ ] CRUD Payment
@@ -31,11 +31,11 @@
  - [ ] Tampilan Profile Perusahaan 
  - [ ] Tampilan Q&A
  - [ ] Tampilan PromoKuy
-
+ - [ ] Tampilan Profil User
 -------------
 # User Login
 - admin:secret [admin]
 - customer:password [customer]
-
 ---
 custom 404 pages?
+--
