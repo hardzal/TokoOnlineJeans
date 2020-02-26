@@ -138,4 +138,23 @@ class Collection extends CI_Controller
 			flash_message('danger', '<strong>Gagal</strong> <em>menghapus</em> data koleksi barang!', 'admin/koleksi');
 		}
 	}
+
+	public function index(){
+		$this->load->view("templates/header");
+		$this->load->view("pages/collection");
+		$this->load->view("templates/footer");
+	}
+
+	public function listJeans(){
+		$this->load->view("templates/header");
+		$this->load->view("pages/list-barang");
+		$this->load->view("templates/footer");
+	}
+
+	public function detailJeans(){
+		$this->load->view("templates/header");
+		$this->load->view("pages/detail-barang");
+		$this->load->view("templates/footer");
+	}
+
 }

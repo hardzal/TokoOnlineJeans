@@ -7,4 +7,18 @@ class Order extends CI_Controller
 	{
 		parent::__construct();
 	}
+
+
+	public function index(){
+		$this->load->view("templates/header");
+		$this->load->view("pages/shopping-cart");
+		$this->load->view("templates/footer");
+	}
+
+	public function payment(){
+		$this->load->view("templates/header");
+		$this->load->view("pages/payment");
+		$this->load->view("templates/footer");
+	}
+
 }
