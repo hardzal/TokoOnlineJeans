@@ -89,10 +89,10 @@
 								<a class="nav-link" href="<?= base_url(); ?>admin/katalog"><i class="fas fa-fw fa-tags"></i>Data Katalog</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="<?= base_url(); ?>Admin/koleksi"><i class="fas fa-fw fa-list-alt"></i>Data Koleksi</a>
+								<a class="nav-link" href="<?= base_url(); ?>admin/koleksi"><i class="fas fa-fw fa-list-alt"></i>Data Koleksi</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="<?= base_url(); ?>Admin/koleksi"><i class="fas fa-fw fa-list-alt"></i>Data FAQ</a>
+								<a class="nav-link" href="<?= base_url(); ?>admin/faq"><i class="fas fa-fw fa-list-alt"></i>Data FAQ</a>
 							</li>
 						</ul>
 					</div>

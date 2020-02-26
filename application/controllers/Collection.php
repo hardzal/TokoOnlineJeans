@@ -10,10 +10,6 @@ class Collection extends CI_Controller
 		$this->load->model('Catalog_Model', 'catalog');
 	}
 
-	public function index() {
-		
-	}
-
 	public function list()
 	{
 		$data['title'] = "Data Koleksi";

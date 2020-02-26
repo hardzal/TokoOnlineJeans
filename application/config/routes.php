@@ -57,3 +57,5 @@ $route['admin/katalog'] = 'catalog/list';
 $route['admin/koleksi'] = 'collection/list';
 $route['admin/koleksi/hapus/(:any)'] = 'collection/delete/$1';
 $route['admin/koleksi/edit'] = 'collection/edit';
+
+$route['admin/faq'] = 'faq/list';

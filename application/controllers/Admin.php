@@ -30,14 +30,4 @@ class Admin extends CI_Controller
 		$this->load->view("admin/order");
 		$this->load->view("templates/admin_footer");
 	}
-
-	public function katalog()
-	{
-		redirect('admin/katalog');
-	}
-
-	public function koleksi()
-	{
-		redirect('admin/koleksi');
-	}
 }

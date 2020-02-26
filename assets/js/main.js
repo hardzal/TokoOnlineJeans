@@ -117,4 +117,37 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	$("#tambahFAQ").on('click', function (e) {
+		e.preventDefault();
+		const link = $(this).data('link');
+		$('#faqForm').prop('action', link);
+
+		$('.faq-modal-title').html("Tambah data FAQ");
+		$('#faqForm')[0].reset();
+	});
+
+	$(".editFaq").on('click', function (e) {
+		e.preventDefault();
+		const link = $(this).data('link');
+		const faq_id = $(this).data('id');
+
+		$('#faqForm').prop('action', link);
+		$('.faq-modal-title').html("Edit data FAQ");
+		$('#faqForm')[0].reset();
+
+		$.ajax({
+			url: link,
+			data: {
+				id: faq_id
+			},
+			method: 'POST',
+			dataType: 'json',
+			success: function (data) {
+				$('#question').val(data.question);
+				$('#answer').val(data.answer);
+				$('#idFaq').val(data.id);
+			}
+		});
+	});
 });
