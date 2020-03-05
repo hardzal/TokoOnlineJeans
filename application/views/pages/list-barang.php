@@ -111,7 +111,7 @@
                     <div class="product-thumbnail">
                         <div class="product-img-head">
                             <div class="product-img">
-                                <img src="assets/images/eco-product-img-1.png" alt="" class="img-fluid"></div>
+                                <img src="<?=base_url()?>assets/images/eco-product-img-1.png" alt="" class="img-fluid"></div>
                             <div class="ribbons"></div>
                             <div class="ribbons-text">New</div>
                             <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
@@ -130,7 +130,7 @@
                             </div>
                             <div class="product-btn text-center">
                                 <a href="#" class="btn btn-primary">Add to Cart</a>
-                                <a href="#" class="btn btn-outline-light">Details</a>
+                                <a href="<?=base_url()?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
                                 <!-- <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a> -->
                             </div>
                         </div>
@@ -140,7 +140,7 @@
                     <div class="product-thumbnail">
                         <div class="product-img-head">
                             <div class="product-img">
-                                <img src="assets/images/eco-product-img-2.png" alt="" class="img-fluid"></div>
+                                <img src="<?=base_url()?>assets/images/eco-product-img-2.png" alt="" class="img-fluid"></div>
                             <div class="ribbons bg-danger"></div>
                             <div class="ribbons-text">Sold</div>
                             <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
@@ -159,7 +159,7 @@
                             </div>
                             <div class="product-btn text-center">
                                 <a href="#" class="btn btn-primary">Add to Cart</a>
-                                <a href="#" class="btn btn-outline-light">Details</a>
+                                <a href="<?=base_url()?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
                                 <!-- <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a> -->
                             </div>
                         </div>
@@ -169,7 +169,7 @@
                     <div class="product-thumbnail">
                         <div class="product-img-head">
                             <div class="product-img">
-                                <img src="assets/images/eco-product-img-3.png" alt="" class="img-fluid"></div>
+                                <img src="<?=base_url()?>assets/images/eco-product-img-3.png" alt="" class="img-fluid"></div>
                             <div class="ribbons bg-brand"></div>
                             <div class="ribbons-text">Offer</div>
                             <div class=""><a href="#" class="product-wishlist-btn active"><i class="fas fa-heart"></i></a></div>
@@ -190,7 +190,7 @@
                             </div>
                             <div class="product-btn text-center">
                                 <a href="#" class="btn btn-primary">Add to Cart</a>
-                                <a href="#" class="btn btn-outline-light">Details</a>
+                                <a href="<?=base_url()?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
                                 <!-- <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a> -->
                             </div>
                         </div>
@@ -200,7 +200,7 @@
                     <div class="product-thumbnail">
                         <div class="product-img-head">
                             <div class="product-img">
-                                <img src="assets/images/eco-product-img-4.png" alt="" class="img-fluid"></div>
+                                <img src="<?=base_url()?>assets/images/eco-product-img-4.png" alt="" class="img-fluid"></div>
                             <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
                         </div>
                         <div class="product-content">
@@ -217,7 +217,7 @@
                             </div>
                             <div class="product-btn text-center">
                                 <a href="#" class="btn btn-primary">Add to Cart</a>
-                                <a href="#" class="btn btn-outline-light">Details</a>
+                                <a href="<?=base_url()?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
                                 <!-- <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a> -->
                             </div>
                         </div>

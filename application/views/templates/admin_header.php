@@ -41,8 +41,8 @@
 									<h5 class="mb-0 text-white nav-user-name">Admin</h5>
 									<span class="status"></span><span class="ml-2">Online</span>
 								</div>
-								<a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Akun</a>
-								<a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Pengaturan</a>
+								<a class="dropdown-item" href="<?=base_url()?>Admin/profile"><i class="fas fa-user mr-2"></i>Akun</a>
+								<!-- <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Pengaturan</a> -->
 								<a class="dropdown-item" href="<?php echo base_url('auth/logout'); ?>"><i class="fas fa-power-off mr-2"></i>Keluar</a>
 							</div>
 						</li>
@@ -105,4 +105,4 @@
 		<!-- ============================================================== -->
 		<!-- wrapper  -->
 		<!-- ============================================================== -->
-		<div class="dashboard-wrapper">
+		<div class="dashboard-wrapper" style="overflow: auto;">

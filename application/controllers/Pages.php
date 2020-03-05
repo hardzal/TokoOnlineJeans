@@ -14,5 +14,33 @@ class Pages extends CI_Controller
 		$this->load->view("templates/footer");
 	}
 
+	public function aboutUs(){
+		$this->load->view("templates/header");
+		$this->load->view("pages/about");
+		$this->load->view("templates/footer");
+	}
+
+	public function QandA(){
+		$this->load->view("templates/header");
+		$this->load->view("pages/QandA");
+		$this->load->view("templates/footer");
+	}
 	
+	public function orderStatus(){
+		$this->load->view("templates/header");
+		$this->load->view("pages/order-status");
+		$this->load->view("templates/footer");
+	}
+
+	public function promoKuy(){
+		$this->load->view("templates/header");
+		$this->load->view("pages/promoKuy");
+		$this->load->view("templates/footer");
+	}
+
+	public function FAQ(){
+		$this->load->view("templates/header");
+		$this->load->view("pages/faq");
+		$this->load->view("templates/footer");
+	}
 }

@@ -1,7 +1,7 @@
 <div class="container-fluid">
-	<div class="p-4">
+	<div class="p-4 mt-4">
 		<div class="title">
-			<h2>Pembayaran</h2>
+			<h2 class="text-center">Pembayaran</h2>
 			<hr>
 		</div>
 		<div class="row">

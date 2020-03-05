@@ -30,4 +30,18 @@ class Admin extends CI_Controller
 		$this->load->view("admin/order");
 		$this->load->view("templates/admin_footer");
 	}
+
+	public function profile() 
+	{
+		$this->load->view("templates/admin_header");
+		$this->load->view("admin/profile");
+		$this->load->view("templates/admin_footer");
+	}
+
+	public function changePassword()
+	{
+		$this->load->view("templates/admin_header");
+		$this->load->view("admin/change-password");
+		$this->load->view("templates/admin_footer");
+	}
 }

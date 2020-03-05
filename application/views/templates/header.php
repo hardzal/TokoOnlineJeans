@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?=base_url();?>assets/libs/css/style.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
 </head>
 <body>
 	<!-- ============================================================== -->
@@ -23,7 +24,7 @@
                     <a href="#"><img class="img-fluid" src="<?=base_url("assets/images/logo.jpeg")?>"></a> 
                 </div>
                 <div class="col-sm-4 col-sm-2">
-                    <h3 class="text-light">Selamat Datang di Denim Factory</h3>
+                    <h2 class="text-light" style="font-weight: bold;">Selamat Datang di Denim Factory</h2>
                     <h4 class="text-light">Look Cool Anytime and Anywhere</h4>
                 </div>
                 <div class="col-sm-4 col-sm-2">
@@ -36,33 +37,36 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            
-                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+                
+                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0" style="font-size: 16px;">
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Koleksi</a>
-                        </li>
-                        <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Q&A</a>
+                            <a class="nav-link" href="<?=base_url()?>Collection">Koleksi</a>
                         </li>
                         <li class="nav-item mx-3 ">
-                            <a class="nav-link" href="#">Shopping Cart</a>
+                            <a class="nav-link" href="<?=base_url()?>Order">Shopping Cart</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Pembayaran</a>
+                            <a class="nav-link" href="<?=base_url()?>Order/payment">Pembayaran</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Status Pembayaran</a>
+                            <a class="nav-link" href="<?=base_url()?>Pages/orderStatus">Status Pembayaran</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Promo Kuy</a>
+                            <a class="nav-link" href="<?=base_url()?>Pages/promoKuy">Promo Kuy</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="<?=base_url()?>Pages/aboutUs">About Us</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="<?=base_url()?>Pages/QandA">Q&A</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="">FAQ</a>
                         </li>
                     </ul>
 
-                    <a href="" class="btn btn-light btn-xs mr-2" style="">Daftar</a>
-                    <a href="" class="btn btn-primary btn-xs mr-2">Masuk</a>
+                    <a href="<?=base_url()?>Auth/register" class="btn btn-light btn-xs mr-2" style="">Daftar</a>
+                    <a href="<?=base_url()?>Auth" class="btn btn-primary btn-xs mr-2">Masuk</a>
                 </div>
             </nav>
 	    </div>
