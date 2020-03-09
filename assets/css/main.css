@@ -29,3 +29,8 @@
 .row .col-sm-4 {
   padding: 20px;
 }
+
+.about {
+  /*border-style: groove; */
+  padding: 0px 200px 30px 200px;
+}

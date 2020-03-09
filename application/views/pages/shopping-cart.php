@@ -1,10 +1,10 @@
 <div class="container-fluid">
 
-    <div class="pt-4">
-        <h2>Shopping Cart</h2>
+    <div class="pt-4 mt-4">
+        <h2 class="text-center">Shopping Cart</h2>
         <hr>
         <div class="col-md-8" style="margin: 0 auto; float: none; margin-bottom: 10px;">
-            <div class="card" >
+            <div class="card mt-5">
                 <div class="card-header">
                     <h4 class="d-flex justify-content-between align-items-center mb-0">
                         <span style="font-size: 20px" class="text-muted">Your Cart</span>
@@ -71,7 +71,7 @@
                         </div>
                     </form>
                     <div class="text-center mt-4 mb-3">
-                        <a class="btn btn-brand" href="" style="font-size: 16px;">Pembayaran</a>                        
+                        <a class="btn btn-brand" href="<?=base_url()?>Order/payment" style="font-size: 16px;">Pembayaran</a>                        
                     </div>
                 </div>
             </div>

@@ -26,11 +26,13 @@
  - [x] Tampilan Halaman Depan (Home)
  - [x] Tampilan Order [Customer]
  - [x] Tampilan Checkout Payment Order [Customer]
- - [ ] Tampilan Status Order [Customer]
+ - [X] Tampilan Status Order [Customer]
  - [ ] Tampilan Filtering Product
- - [ ] Tampilan Profile Perusahaan 
- - [ ] Tampilan Q&A
- - [ ] Tampilan PromoKuy
+ - [X] Tampilan Profile Perusahaan 
+ - [X] Tampilan Q&A
+ - [X] Tampilan PromoKuy
+ - [x] Tampilan Profil Admin
+ - [x] Tampilan FAQ
  - [ ] Tampilan Profil User
 -------------
 # User Login

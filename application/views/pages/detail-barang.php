@@ -77,10 +77,10 @@
                         <ul class="nav nav-tabs" id="myTab5" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active border-left-0" id="product-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="product-tab-1" aria-selected="true">Deskripsi</a>
-                            </li>
+                            </li><!-- 
                             <li class="nav-item">
                                 <a class="nav-link" id="product-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="product-tab-2" aria-selected="false">Ulasan</a>
-                            </li>
+                            </li> -->
                         </ul>
                         <div class="tab-content" id="myTabContent5">
                             <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="product-tab-1">
