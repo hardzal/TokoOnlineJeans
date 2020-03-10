@@ -9,8 +9,9 @@ class Catalog extends CI_Controller
 		$this->load->model('Catalog_Model', 'catalog');
 	}
 
-	public function index()
+	public function index($type = null)
 	{
+		echo $type;
 	}
 
 	public function list()
@@ -48,7 +49,7 @@ class Catalog extends CI_Controller
 			if ($this->input->post('id', true)) {
 				echo json_encode($catalog);
 			} else {
-				redirect('catalog/index');
+				redirect('catalog/list');
 			}
 		} else {
 			$id = $this->input->post('id');

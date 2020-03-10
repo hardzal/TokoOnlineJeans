@@ -12,8 +12,6 @@ class Auth extends CI_Controller
 
 	public function index()
 	{
-		isLogin();
-
 		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[4]');
 
@@ -39,7 +37,6 @@ class Auth extends CI_Controller
 
 	public function register()
 	{
-		isLogin();
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|is_unique[users.username]');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[4]');
@@ -76,7 +73,7 @@ class Auth extends CI_Controller
 					'telp' => $telp,
 				],
 			];
-			
+
 			$result = $this->auth->register($data);
 			if ($result['result']) {
 				flash_message('success', $result['message'], $result['url']);

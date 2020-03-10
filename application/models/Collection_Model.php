@@ -14,13 +14,23 @@ class Collection_Model extends CI_Model
 			->get()->result_object();
 	}
 
-	public function get($id)
+	public function getByType($type)
+	{
+		return $this->db
+			->select('collections.*, catalogs.name AS catalog_name')
+			->from($this::TABLE_NAME)
+			->join('catalogs', 'collections.catalog_id = catalogs.id')
+			->where('collections.type', $type)
+			->get()->result_object();
+	}
+
+	public function get($code)
 	{
 		return $this->db
 			->select('collections.*, catalogs.name AS catalog_name')
 			->from($this::TABLE_NAME)
 			->join('catalogs', 'collections.catalog_id=catalogs.id')
-			->where('collections.id', $id)
+			->where('collections.code', $code)
 			->get()
 			->row_object();
 	}

@@ -1,53 +1,39 @@
 <div class="container-fluid">
-    <div class="row pt-4">
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="product-sidebar">
-                <div class="product-sidebar-widget">
-                    <h4 class="mb-0">E-Commerce Filter</h4>
-                </div>
-                <div class="product-sidebar-widget">
-                    <h4 class="product-sidebar-widget-title">Category</h4>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="cat-1">
-                        <label class="custom-control-label" for="cat-1">Categories #1</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="cat-2">
-                        <label class="custom-control-label" for="cat-2">Categories #2</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="cat-3">
-                        <label class="custom-control-label" for="cat-3">Categories #3</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="cat-4">
-                        <label class="custom-control-label" for="cat-4">Categories #4</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="cat-5">
-                        <label class="custom-control-label" for="cat-5">Categories #5</label>
-                    </div>
-                </div>
-                <div class="product-sidebar-widget">
-                    <h4 class="product-sidebar-widget-title">Size</h4>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="size-1">
-                        <label class="custom-control-label" for="size-1">Small</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="size-2">
-                        <label class="custom-control-label" for="size-2">Medium</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="size-3">
-                        <label class="custom-control-label" for="size-3">Large</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="size-4">
-                        <label class="custom-control-label" for="size-4">Extra Large</label>
-                    </div>
-                </div>
-                <div class="product-sidebar-widget">
+	<div class="row pt-4">
+		<div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+			<div class="product-sidebar">
+				<div class="product-sidebar-widget">
+					<h4 class="mb-0">E-Commerce Filter</h4>
+				</div>
+				<div class="product-sidebar-widget">
+					<h4 class="product-sidebar-widget-title">Category</h4>
+					<?php foreach ($catalogs as $catalog) : ?>
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input" id="cat-<?php echo $catalog->id; ?>">
+							<label class="custom-control-label" for="cat-<?php echo $catalog->id; ?>"><?php echo $catalog->name; ?></label>
+						</div>
+					<?php endforeach; ?>
+				</div>
+				<!--<div class="product-sidebar-widget">
+					<h4 class="product-sidebar-widget-title">Size</h4>
+					<div class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="size-1">
+						<label class="custom-control-label" for="size-1">Small</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="size-2">
+						<label class="custom-control-label" for="size-2">Medium</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="size-3">
+						<label class="custom-control-label" for="size-3">Large</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="size-4">
+						<label class="custom-control-label" for="size-4">Extra Large</label>
+					</div>
+				</div>
+				<div class="product-sidebar-widget">
                     <h4 class="product-sidebar-widget-title">Brand</h4>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="brand-1">
@@ -99,143 +85,142 @@
                         <input type="checkbox" class="custom-control-input" id="price-3">
                         <label class="custom-control-label" for="price-3">$$$$</label>
                     </div>
-                </div>
-                <div class="product-sidebar-widget">
-                    <a href="#" class="btn btn-outline-light">Reset Filter</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
-            <div class="row">
-                <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="product-thumbnail">
-                        <div class="product-img-head">
-                            <div class="product-img">
-                                <img src="<?=base_url()?>assets/images/eco-product-img-1.png" alt="" class="img-fluid"></div>
-                            <div class="ribbons"></div>
-                            <div class="ribbons-text">New</div>
-                            <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-                        </div>
-                        <div class="product-content">
-                            <div class="product-content-head">
-                                <h3 class="product-title">T-Shirt Product Title</h3>
-                                <div class="product-rating d-inline-block">
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                </div>
-                                <div class="product-price">$49.00</div>
-                            </div>
-                            <div class="product-btn text-center">
-                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                <a href="<?=base_url()?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
-                                <!-- <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="product-thumbnail">
-                        <div class="product-img-head">
-                            <div class="product-img">
-                                <img src="<?=base_url()?>assets/images/eco-product-img-2.png" alt="" class="img-fluid"></div>
-                            <div class="ribbons bg-danger"></div>
-                            <div class="ribbons-text">Sold</div>
-                            <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-                        </div>
-                        <div class="product-content">
-                            <div class="product-content-head">
-                                <h3 class="product-title">T-Shirt Product Title</h3>
-                                <div class="product-rating d-inline-block">
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                </div>
-                                <div class="product-price">$49.00</div>
-                            </div>
-                            <div class="product-btn text-center">
-                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                <a href="<?=base_url()?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
-                                <!-- <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="product-thumbnail">
-                        <div class="product-img-head">
-                            <div class="product-img">
-                                <img src="<?=base_url()?>assets/images/eco-product-img-3.png" alt="" class="img-fluid"></div>
-                            <div class="ribbons bg-brand"></div>
-                            <div class="ribbons-text">Offer</div>
-                            <div class=""><a href="#" class="product-wishlist-btn active"><i class="fas fa-heart"></i></a></div>
-                        </div>
-                        <div class="product-content">
-                            <div class="product-content-head">
-                                <h3 class="product-title">T-Shirt Product Title</h3>
-                                <div class="product-rating d-inline-block">
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                </div>
-                                <div class="product-price">$49.00
-                                    <del class="product-del">$69.00</del>
-                                </div>
-                            </div>
-                            <div class="product-btn text-center">
-                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                <a href="<?=base_url()?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
-                                <!-- <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="product-thumbnail">
-                        <div class="product-img-head">
-                            <div class="product-img">
-                                <img src="<?=base_url()?>assets/images/eco-product-img-4.png" alt="" class="img-fluid"></div>
-                            <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-                        </div>
-                        <div class="product-content">
-                            <div class="product-content-head">
-                                <h3 class="product-title">T-Shirt Product Title</h3>
-                                <div class="product-rating d-inline-block">
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                    <i class="fa fa-fw fa-star"></i>
-                                </div>
-                                <div class="product-price">$49.00</div>
-                            </div>
-                            <div class="product-btn text-center">
-                                <a href="#" class="btn btn-primary">Add to Cart</a>
-                                <a href="<?=base_url()?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
-                                <!-- <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item active"><a class="page-link " href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        
-    </div>    
+                </div>-->
+				<div class="product-sidebar-widget">
+					<a href="#" class="btn btn-outline-light">Reset Filter</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
+			<div class="row">
+				<!--<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+					<div class="product-thumbnail">
+						<div class="product-img-head">
+							<div class="product-img">
+								<img src="<?= base_url() ?>assets/images/eco-product-img-1.png" alt="" class="img-fluid"></div>
+							<div class="ribbons"></div>
+							<div class="ribbons-text">New</div>
+							<div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
+						</div>
+						<div class="product-content">
+							<div class="product-content-head">
+								<h3 class="product-title">T-Shirt Product Title</h3>
+								<div class="product-rating d-inline-block">
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+								</div>
+								<div class="product-price">$49.00</div>
+							</div>
+							<div class="product-btn text-center">
+								<a href="#" class="btn btn-primary">Add to Cart</a>
+								<a href="<?= base_url() ?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
+							</div>
+						</div>
+					</div>
+				</div>-->
+				<!--<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+					<div class="product-thumbnail">
+						<div class="product-img-head">
+							<div class="product-img">
+								<img src="<?= base_url() ?>assets/images/eco-product-img-2.png" alt="" class="img-fluid"></div>
+							<div class="ribbons bg-danger"></div>
+							<div class="ribbons-text">Sold</div>
+							<div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
+						</div>
+						<div class="product-content">
+							<div class="product-content-head">
+								<h3 class="product-title">T-Shirt Product Title</h3>
+								<div class="product-rating d-inline-block">
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+								</div>
+								<div class="product-price">$49.00</div>
+							</div>
+							<div class="product-btn text-center">
+								<a href="#" class="btn btn-primary">Add to Cart</a>
+								<a href="<?= base_url() ?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
+							</div>
+						</div>
+					</div>
+				</div>-->
+				<!--<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+					<div class="product-thumbnail">
+						<div class="product-img-head">
+							<div class="product-img">
+								<img src="<?= base_url() ?>assets/images/eco-product-img-3.png" alt="" class="img-fluid"></div>
+							<div class="ribbons bg-brand"></div>
+							<div class="ribbons-text">Offer</div>
+							<div class=""><a href="#" class="product-wishlist-btn active"><i class="fas fa-heart"></i></a></div>
+						</div>
+						<div class="product-content">
+							<div class="product-content-head">
+								<h3 class="product-title">T-Shirt Product Title</h3>
+								<div class="product-rating d-inline-block">
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+									<i class="fa fa-fw fa-star"></i>
+								</div>
+								<div class="product-price">$49.00
+									<del class="product-del">$69.00</del>
+								</div>
+							</div>
+							<div class="product-btn text-center">
+								<a href="#" class="btn btn-primary">Add to Cart</a>
+								<a href="<?= base_url() ?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
+							</div>
+						</div>
+					</div>
+				</div>-->
+				<?php foreach ($collections as $collection) : ?>
+					<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+						<div class="product-thumbnail">
+							<div class="product-img-head">
+								<div class="product-img">
+									<a href="<?php echo base_url('collection/') . $collection->code . "/" . $collection->permalink; ?>" title="<?php echo $collection->name; ?>"><img src="<?= base_url() ?>assets/images/collections/<?php echo $collection->img; ?>" alt="<?php echo $collection->img; ?>" class="img-fluid"></a>
+								</div>
+								<!--<div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>-->
+							</div>
+							<div class="product-content">
+								<div class="product-content-head">
+									<h3 class="product-title"><?php echo $collection->name; ?></h3>
+									<!--<div class="product-rating d-inline-block">
+										<i class="fa fa-fw fa-star"></i>
+										<i class="fa fa-fw fa-star"></i>
+										<i class="fa fa-fw fa-star"></i>
+										<i class="fa fa-fw fa-star"></i>
+										<i class="fa fa-fw fa-star"></i>
+									</div>-->
+									<div class="product-price">Rp <?php echo number_format($collection->price, 2, ',', '.'); ?></div>
+								</div>
+								<div class="product-btn text-center">
+									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<a href="<?= base_url() ?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				<?php endforeach; ?>
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<nav aria-label="Page navigation example">
+						<ul class="pagination">
+							<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+							<li class="page-item"><a class="page-link" href="#">1</a></li>
+							<li class="page-item active"><a class="page-link " href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item"><a class="page-link" href="#">Next</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+	</div>
 </div>

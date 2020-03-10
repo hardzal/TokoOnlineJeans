@@ -135,22 +135,49 @@ class Collection extends CI_Controller
 		}
 	}
 
-	public function index(){
-		$this->load->view("templates/header");
-		$this->load->view("pages/collection");
+	public function index()
+	{
+		$data['title'] = "Collection and Catalog";
+		$data['catalogs'] = $this->catalog->getAll();
+
+		$this->load->view("templates/header", $data);
+		$this->load->view("pages/collection", $data);
 		$this->load->view("templates/footer");
 	}
 
-	public function listJeans(){
-		$this->load->view("templates/header");
-		$this->load->view("pages/list-barang");
+	public function listJeans($type = null)
+	{
+		if ($type == null) {
+			$data['collections'] = $this->collection->getAll();
+		} else {
+			if ($type == 'wanita') {
+				$tipe = 0;
+			} else if ($type == 'pria') {
+				$tipe = 1;
+			} else {
+				redirect('collections');
+			}
+			$data['collections'] = $this->collection->getByType($tipe);
+		}
+
+		$data['title'] = "Product lists";
+		$data['catalogs'] = $this->catalog->getAll();
+
+		$this->load->view("templates/header", $data);
+		$this->load->view("pages/list-barang", $data);
 		$this->load->view("templates/footer");
 	}
 
-	public function detailJeans(){
-		$this->load->view("templates/header");
-		$this->load->view("pages/detail-barang");
+	public function detailJeans($code = null, $type = null)
+	{
+		if ($code == null) {
+			redirect('collections');
+		}
+		$data['jeans'] = $this->collection->get($code);
+		$data['title'] = $data['jeans']->name;
+
+		$this->load->view("templates/header", $data);
+		$this->load->view("pages/detail-barang", $data);
 		$this->load->view("templates/footer");
 	}
-
 }

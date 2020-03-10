@@ -30,7 +30,7 @@
 					<div class="card">
 						<div class="card-header">
 							<!-- Button trigger modal -->
-							<a href="<?php echo base_url('catalog/index'); ?>" data-link="<?php echo base_url('catalog/index'); ?>" class="btn btn-success" data-toggle="modal" id="tambahKatalog" data-target="#ModalCatalog">
+							<a href="<?php echo base_url('catalog/list'); ?>" data-link="<?php echo base_url('catalog/list'); ?>" class="btn btn-success" data-toggle="modal" id="tambahKatalog" data-target="#ModalCatalog">
 								Tambahkan Data
 							</a>
 							<!-- Modal -->
