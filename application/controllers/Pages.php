@@ -8,37 +8,45 @@ class Pages extends CI_Controller
 		parent::__construct();
 	}
 
-	public function index(){
-		$this->load->view("templates/header");
+	public function index()
+	{
+		$data['title'] = "Beranda";
+
+		$this->load->view("templates/header", $data);
 		$this->load->view("pages/home");
 		$this->load->view("templates/footer");
 	}
 
-	public function aboutUs(){
+	public function aboutUs()
+	{
 		$this->load->view("templates/header");
 		$this->load->view("pages/about");
 		$this->load->view("templates/footer");
 	}
 
-	public function QandA(){
+	public function QandA()
+	{
 		$this->load->view("templates/header");
 		$this->load->view("pages/QandA");
 		$this->load->view("templates/footer");
 	}
-	
-	public function orderStatus(){
+
+	public function orderStatus()
+	{
 		$this->load->view("templates/header");
 		$this->load->view("pages/order-status");
 		$this->load->view("templates/footer");
 	}
 
-	public function promoKuy(){
+	public function promoKuy()
+	{
 		$this->load->view("templates/header");
 		$this->load->view("pages/promoKuy");
 		$this->load->view("templates/footer");
 	}
 
-	public function FAQ(){
+	public function FAQ()
+	{
 		$this->load->view("templates/header");
 		$this->load->view("pages/faq");
 		$this->load->view("templates/footer");

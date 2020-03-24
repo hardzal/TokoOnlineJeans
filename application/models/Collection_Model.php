@@ -31,6 +31,7 @@ class Collection_Model extends CI_Model
 			->from($this::TABLE_NAME)
 			->join('catalogs', 'collections.catalog_id=catalogs.id')
 			->where('collections.code', $code)
+			->or_where('collections.id', $code)
 			->get()
 			->row_object();
 	}

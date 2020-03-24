@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid mb-4">
 	<div class="row pt-4">
 		<div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
 			<div class="product-sidebar">
@@ -93,132 +93,46 @@
 		</div>
 		<div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
 			<div class="row">
-				<!--<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-					<div class="product-thumbnail">
-						<div class="product-img-head">
-							<div class="product-img">
-								<img src="<?= base_url() ?>assets/images/eco-product-img-1.png" alt="" class="img-fluid"></div>
-							<div class="ribbons"></div>
-							<div class="ribbons-text">New</div>
-							<div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-						</div>
-						<div class="product-content">
-							<div class="product-content-head">
-								<h3 class="product-title">T-Shirt Product Title</h3>
-								<div class="product-rating d-inline-block">
-									<i class="fa fa-fw fa-star"></i>
-									<i class="fa fa-fw fa-star"></i>
-									<i class="fa fa-fw fa-star"></i>
-									<i class="fa fa-fw fa-star"></i>
-									<i class="fa fa-fw fa-star"></i>
-								</div>
-								<div class="product-price">$49.00</div>
-							</div>
-							<div class="product-btn text-center">
-								<a href="#" class="btn btn-primary">Add to Cart</a>
-								<a href="<?= base_url() ?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
-							</div>
-						</div>
+				<?php if (empty($collections)) : ?>
+					<div class="col-md-12">
+						<p class='alert alert-primary'>
+							Koleksi jeans belum tersedia!
+						</p>
 					</div>
-				</div>-->
-				<!--<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-					<div class="product-thumbnail">
-						<div class="product-img-head">
-							<div class="product-img">
-								<img src="<?= base_url() ?>assets/images/eco-product-img-2.png" alt="" class="img-fluid"></div>
-							<div class="ribbons bg-danger"></div>
-							<div class="ribbons-text">Sold</div>
-							<div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-						</div>
-						<div class="product-content">
-							<div class="product-content-head">
-								<h3 class="product-title">T-Shirt Product Title</h3>
-								<div class="product-rating d-inline-block">
-									<i class="fa fa-fw fa-star"></i>
-									<i class="fa fa-fw fa-star"></i>
-									<i class="fa fa-fw fa-star"></i>
-									<i class="fa fa-fw fa-star"></i>
-									<i class="fa fa-fw fa-star"></i>
+				<?php else : ?>
+					<?php foreach ($collections as $collection) : ?>
+						<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+							<div class="product-thumbnail">
+								<div class="product-img-head">
+									<div class="product-img">
+										<a href="<?php echo base_url('collection/') . $collection->code . "/" . $collection->permalink; ?>" title="<?php echo $collection->name; ?>"><img src="<?= base_url() ?>assets/images/collections/<?php echo $collection->img; ?>" alt="<?php echo $collection->img; ?>" class="img-fluid"></a>
+									</div>
 								</div>
-								<div class="product-price">$49.00</div>
-							</div>
-							<div class="product-btn text-center">
-								<a href="#" class="btn btn-primary">Add to Cart</a>
-								<a href="<?= base_url() ?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
+								<div class="product-content">
+									<div class="product-content-head">
+										<h3 class="product-title"><?php echo $collection->name; ?></h3>
+										<div class="product-price">Rp <?php echo number_format($collection->price, 2, ',', '.'); ?></div>
+									</div>
+									<div class="product-btn text-center">
+										<a href="#" class="btn btn-primary">Add to Cart</a>
+										<a href="<?php echo base_url('collection/') . $collection->code . "/" . $collection->permalink; ?>" title="<?php echo $collection->name; ?>" class="btn btn-outline-light">Details</a>
+									</div>
+								</div>
 							</div>
 						</div>
+					<?php endforeach; ?>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+						<nav aria-label="Page navigation example">
+							<ul class="pagination">
+								<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item active"><a class="page-link " href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">Next</a></li>
+							</ul>
+						</nav>
 					</div>
-				</div>-->
-				<!--<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-					<div class="product-thumbnail">
-						<div class="product-img-head">
-							<div class="product-img">
-								<img src="<?= base_url() ?>assets/images/eco-product-img-3.png" alt="" class="img-fluid"></div>
-							<div class="ribbons bg-brand"></div>
-							<div class="ribbons-text">Offer</div>
-							<div class=""><a href="#" class="product-wishlist-btn active"><i class="fas fa-heart"></i></a></div>
-						</div>
-						<div class="product-content">
-							<div class="product-content-head">
-								<h3 class="product-title">T-Shirt Product Title</h3>
-								<div class="product-rating d-inline-block">
-									<i class="fa fa-fw fa-star"></i>
-									<i class="fa fa-fw fa-star"></i>
-									<i class="fa fa-fw fa-star"></i>
-									<i class="fa fa-fw fa-star"></i>
-									<i class="fa fa-fw fa-star"></i>
-								</div>
-								<div class="product-price">$49.00
-									<del class="product-del">$69.00</del>
-								</div>
-							</div>
-							<div class="product-btn text-center">
-								<a href="#" class="btn btn-primary">Add to Cart</a>
-								<a href="<?= base_url() ?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
-							</div>
-						</div>
-					</div>
-				</div>-->
-				<?php foreach ($collections as $collection) : ?>
-					<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-						<div class="product-thumbnail">
-							<div class="product-img-head">
-								<div class="product-img">
-									<a href="<?php echo base_url('collection/') . $collection->code . "/" . $collection->permalink; ?>" title="<?php echo $collection->name; ?>"><img src="<?= base_url() ?>assets/images/collections/<?php echo $collection->img; ?>" alt="<?php echo $collection->img; ?>" class="img-fluid"></a>
-								</div>
-								<!--<div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>-->
-							</div>
-							<div class="product-content">
-								<div class="product-content-head">
-									<h3 class="product-title"><?php echo $collection->name; ?></h3>
-									<!--<div class="product-rating d-inline-block">
-										<i class="fa fa-fw fa-star"></i>
-										<i class="fa fa-fw fa-star"></i>
-										<i class="fa fa-fw fa-star"></i>
-										<i class="fa fa-fw fa-star"></i>
-										<i class="fa fa-fw fa-star"></i>
-									</div>-->
-									<div class="product-price">Rp <?php echo number_format($collection->price, 2, ',', '.'); ?></div>
-								</div>
-								<div class="product-btn text-center">
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-									<a href="<?= base_url() ?>Collection/detailJeans" class="btn btn-outline-light">Details</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				<?php endforeach; ?>
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-					<nav aria-label="Page navigation example">
-						<ul class="pagination">
-							<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-							<li class="page-item"><a class="page-link" href="#">1</a></li>
-							<li class="page-item active"><a class="page-link " href="#">2</a></li>
-							<li class="page-item"><a class="page-link" href="#">3</a></li>
-							<li class="page-item"><a class="page-link" href="#">Next</a></li>
-						</ul>
-					</nav>
-				</div>
+				<?php endif; ?>
 			</div>
 		</div>
 

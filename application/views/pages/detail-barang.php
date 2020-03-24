@@ -10,7 +10,6 @@
 								<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 							</ol>
 							<div class="carousel-inner">
-							
 								<div class="carousel-item active">
 									<img class="d-block w-100 img-thumbnail" src="<?= base_url() ?>assets/images/pakaian-pria.jpg" alt="First slide" style="width: 285px; height: 313px">
 								</div>
@@ -40,15 +39,6 @@
 								<i class="fa fa-fw fa-star"></i>
 							</div>
 							<h3 class="mb-0 text-primary">Rp. <?php echo number_format($jeans->price, 0, ',', '.'); ?></h3>
-						</div>
-						<div class="product-colors border-bottom">
-							<h4>Warna Tersedia</h4>
-							<input type="radio" class="radio" id="radio-1" name="group" />
-							<label for="radio-1"></label>
-							<input type="radio" class="radio" id="radio-2" name="group" />
-							<label for="radio-2"></label>
-							<input type="radio" class="radio" id="radio-3" name="group" />
-							<label for="radio-3"></label>
 						</div>
 						<div class="product-size border-bottom">
 							<h4>Ukuran</h4>

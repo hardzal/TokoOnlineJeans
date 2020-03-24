@@ -59,6 +59,30 @@
 													</div>
 
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-2">
+														<label for="nama_barang">Type</label>
+														<div class="row">
+															<div class="col-md-6">
+																<label class="custom-control custom-radio custom-control-inline" for="type1">
+																	<input type="radio" class="custom-control-input" id="type1" name="type" required value="1">
+																	<span class="custom-control-label">Pria</span>
+																</label>
+															</div>
+															<div class="col-md-6">
+																<label class="custom-control custom-radio custom-control-inline" for="type2">
+																	<input type="radio" class="custom-control-input" id="type2" name="type" required value="0">
+																	<span class="custom-control-label">Wanita</span>
+																</label>
+															</div>
+														</div>
+														<div class="valid-feedback">
+															<!-- Looks good! -->
+														</div>
+														<div class="invalid-feedback">
+															<?php echo form_error('type', '<small class="text-danger">', '</small>'); ?>
+														</div>
+													</div>
+
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-2">
 														<label for="katalog">Katalog Barang</label>
 														<select class="form-control" id="katalog" name="katalog" required value="<?php echo set_value('katalog'); ?>">
 															<option value="">Pilih</option>
@@ -87,7 +111,18 @@
 
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-2">
 														<label for="stok">Stok Barang</label>
-														<input type="number" class="form-control" id="stok" required min=0 name="stok" value="<?php echo set_value('stok'); ?>">
+
+														<?php foreach ($sizes as $size) : ?>
+															<div class="row mb-3">
+																<div class="col-md-3">
+																	<label for="stock_sizestock_size<?= $size->id; ?>"><?= $size->size; ?></label>
+																</div>
+																<div class="col-md-9">
+																	<input type="hidden" name="size[]" value="<?= $size->id; ?>" />
+																	<input type="number" class="form-control" id="stock_size<?= $size->id; ?>" required min=0 name="stok[]" value="">
+																</div>
+															</div>
+														<?php endforeach; ?>
 														<div class="valid-feedback">
 															<!-- Looks good! -->
 														</div>
@@ -164,7 +199,7 @@
 													<td><?php echo $koleksi->stock; ?></td>
 													<td><?php echo $koleksi->price; ?></td>
 													<td class="text-center">
-														<a class="btn btn-xs btn-warning mr-3 editCollection" href="<?php echo base_url('admin/koleksi/edit'); ?>" data-toggle="modal" data-target="#ModalCreate" data-id="<?php echo $koleksi->id; ?>" data-link="<?php echo base_url('admin/koleksi/edit') ?>">Edit</a>
+														<a class="btn btn-xs btn-warning mr-3 editCollection" href="<?php echo base_url('admin/koleksi/edit'); ?>" data-toggle="modal" data-target="#ModalCreate" data-id="<?php echo $koleksi->code; ?>" data-link="<?php echo base_url('admin/koleksi/edit') ?>">Edit</a>
 														<a class="btn btn-xs btn-danger" href="<?php echo base_url('admin/koleksi/hapus/') . $koleksi->id; ?>" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?')">Hapus</a>
 													</td>
 												</tr>

@@ -68,12 +68,23 @@ $(document).ready(function () {
 			method: 'POST',
 			dataType: 'json',
 			success: function (data) {
-				$('#nama_barang').val(data.name);
-				$('#katalog option[value="' + data.catalog_id + '"]').prop('selected', true);
-				$('#harga').val(data.price);
-				$('#stok').val(data.stock);
-				$('#deskripsi').val(data.description);
-				$('#koleksi_id').val(data.id);
+				console.log(data);
+				$('#nama_barang').val(data.collection.name);
+				if (data.collection.type) {
+					$('#type1').attr('checked', true);
+				} else {
+					$('#type2').attr('checked', true);
+				}
+				$('#katalog option[value="' + data.collection.catalog_id + '"]').prop('selected', true);
+				$('#harga').val(data.collection.price);
+				// $('#stok').val(data.stock);
+				$('#deskripsi').val(data.collection.description);
+				$('#koleksi_id').val(data.collection.id);
+				$('#stock_size1').val(data.sizes[4].stock);
+				$('#stock_size2').val(data.sizes[3].stock);
+				$('#stock_size3').val(data.sizes[2].stock);
+				$('#stock_size4').val(data.sizes[1].stock);
+				$('#stock_size5').val(data.sizes[0].stock);
 			}
 		});
 	});
