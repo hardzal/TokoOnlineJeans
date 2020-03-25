@@ -41,7 +41,7 @@
 									<h5 class="mb-0 text-white nav-user-name">Admin</h5>
 									<span class="status"></span><span class="ml-2">Online</span>
 								</div>
-								<a class="dropdown-item" href="<?=base_url()?>Admin/profile"><i class="fas fa-user mr-2"></i>Akun</a>
+								<a class="dropdown-item" href="<?= base_url() ?>Admin/profile"><i class="fas fa-user mr-2"></i>Akun</a>
 								<!-- <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Pengaturan</a> -->
 								<a class="dropdown-item" href="<?php echo base_url('auth/logout'); ?>"><i class="fas fa-power-off mr-2"></i>Keluar</a>
 							</div>
@@ -73,7 +73,7 @@
 								<a class="nav-link" href="<?= base_url(); ?>Admin" aria-expanded="false"><i class="fa fa-fw fa-info"></i>Dashboard</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="<?= base_url(); ?>Admin/pembayaran" aria-expanded="false"><i class="fa fa-fw fa-credit-card"></i>Data Pembayaran</a>
+								<a class="nav-link" href="<?= base_url(); ?>Admin/pembayaran" aria-expanded="false"><i class="fas fa-shopping-cart"></i>Data Pembayaran</a>
 							</li>
 							<li>
 								<a class="nav-link" href="<?= base_url(); ?>Admin/order" aria-expanded="false"><i class="fa fa-fw fa-list"></i>Data Order</a>
@@ -93,6 +93,9 @@
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="<?= base_url(); ?>admin/faq"><i class="fas fa-fw fa-list-alt"></i>Data FAQ</a>
+							</li>
+							<li class="nav-item">
+								<a href="<?= base_url(); ?>admin/methodpayments" class="nav-link"><i class="fab fa-cc-amazon-pay"></i>Data Metode Pembayaran</a>
 							</li>
 						</ul>
 					</div>

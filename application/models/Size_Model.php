@@ -11,7 +11,12 @@ class Size_Model extends CI_Model
 
 	public function getCollection($collection_id)
 	{
-		return $this->db->get_where('collection_sizes', ['collection_id' => $collection_id])->result_object();
+		return $this->db->select('collection_sizes.*, sizes.size')
+			->from('collection_sizes')
+			->join('sizes', 'sizes.id = collection_sizes.size_id')
+			->where('collection_id', $collection_id)
+			->get()
+			->result_object();
 	}
 
 	public function insertCollection($collection_id, $stock)

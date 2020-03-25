@@ -63,12 +63,12 @@
 						<a class="nav-link" href="<?= base_url() ?>Pages/QandA">Q&A</a>
 					</li>
 					<li class="nav-item mx-3">
-						<a class="nav-link" href="">FAQ</a>
+						<a class="nav-link" href="<?= base_url() ?>Pages/FAQ">FAQ</a>
 					</li>
 				</ul>
 				<?php
 				if ($this->session->userdata('username')) : ?>
-					<a href="<?= base_url(); ?>dashboard" class="btn btn-primary mr-2"><?php echo $this->session->userdata('username'); ?></a>
+					<a href="<?= base_url(); ?>admin" class="btn btn-primary mr-2"><?php echo $this->session->userdata('username'); ?></a>
 					<a href="<?= base_url(); ?>auth/logout" class="btn btn-danger" onclick="return confirm('Apakah kamu yakin ingin logout?');">Logout</a>
 				<?php else : ?> <a href="<?= base_url() ?>Auth/register" class="btn btn-light btn-xs mr-2">Daftar</a>
 					<a href="<?= base_url() ?>Auth" class="btn btn-primary btn-xs mr-2">Masuk</a>

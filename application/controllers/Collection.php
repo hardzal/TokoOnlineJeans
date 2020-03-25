@@ -203,6 +203,7 @@ class Collection extends CI_Controller
 			redirect(base_url());
 		}
 		$data['jeans'] = $this->collection->get($code);
+		$data['sizes'] = $this->size->getCollection($data['jeans']->id);
 		$data['title'] = $data['jeans']->name;
 
 		if (empty($data['jeans'])) {

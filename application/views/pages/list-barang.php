@@ -111,7 +111,7 @@
 								<div class="product-content">
 									<div class="product-content-head">
 										<h3 class="product-title"><?php echo $collection->name; ?></h3>
-										<div class="product-price">Rp <?php echo number_format($collection->price, 2, ',', '.'); ?></div>
+										<div class="product-price">Rp <?php echo number_format($collection->price, 0, ',', '.'); ?></div>
 									</div>
 									<div class="product-btn text-center">
 										<a href="#" class="btn btn-primary">Add to Cart</a>

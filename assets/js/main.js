@@ -68,7 +68,7 @@ $(document).ready(function () {
 			method: 'POST',
 			dataType: 'json',
 			success: function (data) {
-				console.log(data);
+				// console.log(data);
 				$('#nama_barang').val(data.collection.name);
 				if (data.collection.type) {
 					$('#type1').attr('checked', true);
