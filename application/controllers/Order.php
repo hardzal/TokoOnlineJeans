@@ -8,6 +8,7 @@ class Order extends CI_Controller
 		parent::__construct();
 		$this->load->model('Order_Model', 'order');
 		$this->load->model('Collection_Model', 'collection');
+		$this->load->model('Size_Model', 'size');
 	}
 
 
@@ -38,9 +39,10 @@ class Order extends CI_Controller
 			$user_id = $this->input->post('user_id', true);
 			$collection_id = $this->input->post('collection_id', true);
 			$stock = $this->input->post('stock', true);
-			$size = $this->input->post('size', true);
+			$size_id = $this->input->post('size', true);
 
 			$collection = $this->collection->get($collection_id);
+			$size = $this->size->getCollectionSize($collection_id, $size_id);
 
 			$order = [
 				'user_id' => $user_id,
@@ -58,9 +60,34 @@ class Order extends CI_Controller
 				$orders[] = $order;
 				$this->session->set_userdata('orders', $orders);
 				$this->session->set_flashdata('message', '<div class="alert alert-success">Berhasil melakukan order</div>');
-				redirect('order/index', 'refresh');
 			}
+			redirect('order/index', 'refresh');
 		}
+	}
+
+	public function edit()
+	{
+		if (!$this->input->post('index')) {
+			redirect('order');
+		}
+		$index = $this->input->post('index');
+		$quantity = $this->input->post('quantity');
+		$start = 0;
+
+		foreach ($index as $indek) {
+			$_SESSION['orders'][$indek]['quantity'] = $quantity[$start];
+			$start++;
+		}
+		flash_message('success', 'Berhasil memperbaharui order', 'order/index');
+	}
+
+	public function delete($id)
+	{
+		if (!$this->session->userdata('orders')) {
+			redirect('orders');
+		}
+		unset($_SESSION['orders'][$id]);
+		flash_message('success', 'Berhasil menghapus order', 'order/index');
 	}
 
 	public function payment()

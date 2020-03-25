@@ -52,7 +52,7 @@
 								<div class="product-qty">
 									<h4>Quantity</h4>
 									<div class="quantity">
-										<input type="number" min="1" max="9" step="1" value="1" name="stock" />
+										<input type="number" min="1" max="<?php echo $jeans->stock; ?>" step="1" value="1" name="stock" />
 									</div>
 								</div>
 							</div>

@@ -68,7 +68,7 @@ $(document).ready(function () {
 			method: 'POST',
 			dataType: 'json',
 			success: function (data) {
-				// console.log(data);
+
 				$('#nama_barang').val(data.collection.name);
 				if (data.collection.type) {
 					$('#type1').attr('checked', true);
@@ -158,6 +158,32 @@ $(document).ready(function () {
 				$('#question').val(data.question);
 				$('#answer').val(data.answer);
 				$('#idFaq').val(data.id);
+			}
+		});
+
+
+	});
+
+	$('.editMethod').on('click', function (e) {
+		e.preventDefault();
+		const link = $(this).data('link');
+		const method_id = $(this).data('id');
+
+		$('#methodPayments').prop('action', link);
+		$('.methodPayments-modal-title').html("Edit data Metode Pembayaran");
+		$('#methodPayments')[0].reset();
+
+		$.ajax({
+			url: link,
+			data: {
+				id: method_id
+			},
+			method: 'POST',
+			dataType: 'json',
+			success: function (data) {
+				$('#nama').val(data.name);
+				$('#code').val(data.code);
+				$('#idMethodPayments').val(data.id);
 			}
 		});
 	});

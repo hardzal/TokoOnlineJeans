@@ -54,11 +54,14 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['admin/katalog'] = 'catalog/list';
+
 $route['admin/koleksi'] = 'collection/list';
 $route['admin/koleksi/hapus/(:any)'] = 'collection/delete/$1';
 $route['admin/koleksi/edit'] = 'collection/edit';
 
 $route['admin/faq'] = 'faq/list';
+
+$route['admin/methodpayments'] = 'methodpayment/list';
 
 $route['catalog/(:any)'] = 'catalog/index/$1';
 

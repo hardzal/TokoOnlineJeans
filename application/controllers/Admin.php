@@ -6,7 +6,7 @@ class Admin extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		isLogin();
+		// isLogin();
 	}
 
 	public function index()
@@ -40,7 +40,7 @@ class Admin extends CI_Controller
 	{
 		$data['title'] = "Profile";
 
-		$this->load->view("templates/admin_header");
+		$this->load->view("templates/admin_header", $data);
 		$this->load->view("admin/profile");
 		$this->load->view("templates/admin_footer");
 	}
@@ -49,7 +49,7 @@ class Admin extends CI_Controller
 	{
 		$data['title'] = "Change Password";
 
-		$this->load->view("templates/admin_header");
+		$this->load->view("templates/admin_header", $data);
 		$this->load->view("admin/change-password");
 		$this->load->view("templates/admin_footer");
 	}

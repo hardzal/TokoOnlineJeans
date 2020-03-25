@@ -45,7 +45,7 @@
 						<a class="nav-link" href="<?= base_url() ?>Collection">Koleksi</a>
 					</li>
 					<li class="nav-item mx-3 ">
-						<a class="nav-link" href="<?= base_url() ?>Order">Shopping Cart</a>
+						<a class="nav-link" href="<?= base_url() ?>Order"><span class='badge badge-primary mr-2'><?php echo @count($this->session->userdata('orders')) ?? 0; ?></span>Shopping Cart</a>
 					</li>
 					<li class="nav-item mx-3">
 						<a class="nav-link" href="<?= base_url() ?>Order/payment">Pembayaran</a>
