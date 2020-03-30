@@ -43,22 +43,22 @@ class Collection extends CI_Controller
 
 			$this->load->library('upload', $config);
 			if (!$this->upload->do_upload('image', $config)) {
-				flash_message('danger', '<strong>Gagal</strong> Mengupload gambar : ' . $this->upload->display_errors('<p class="text-danger">', '</p>'), 'admin/koleksi');
+				flash_message('danger', '<strong>Gagal</strong> Mengunggah gambar : ' . $this->upload->display_errors('<p class="text-danger">', '</p>'), 'admin/koleksi');
 			}
 
 			$total = 0;
 			$stocks = $this->input->post('stok', true);
 			$sizes = $this->input->post('size', true);
 			$sizeStock = array();
-			$i = 0;
+			$indek = 0;
 
 			foreach ($stocks as $stok) {
 				array_push($sizeStock, [
-					'size_id' => $sizes[$i],
+					'size_id' => $sizes[$indek],
 					'stock' => $stok
 				]);
 				$total += $stok;
-				$i++;
+				$indek++;
 			}
 
 			$data = [

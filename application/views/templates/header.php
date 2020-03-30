@@ -45,13 +45,21 @@
 						<a class="nav-link" href="<?= base_url() ?>Collection">Koleksi</a>
 					</li>
 					<li class="nav-item mx-3 ">
-						<a class="nav-link" href="<?= base_url() ?>Order"><span class='badge badge-primary mr-2'><?php echo @count($this->session->userdata('orders')) ?? 0; ?></span>Shopping Cart</a>
+						<a class="nav-link" href="<?= base_url() ?>Order">
+							<span class='badge badge-primary mr-2'>
+								<?php if ($this->session->userdata('transactions') == 0) :
+									echo @count($this->session->userdata('orders')) ?? 0;
+								else :
+									echo 0;
+								endif; ?>
+							</span>Shopping Cart
+						</a>
 					</li>
 					<li class="nav-item mx-3">
 						<a class="nav-link" href="<?= base_url() ?>Order/payment">Pembayaran</a>
 					</li>
 					<li class="nav-item mx-3">
-						<a class="nav-link" href="<?= base_url() ?>Pages/orderStatus">Status Pembayaran</a>
+						<a class="nav-link" href="<?= base_url() ?>Order/orderStatus">Status Pembayaran</a>
 					</li>
 					<li class="nav-item mx-3">
 						<a class="nav-link" href="<?= base_url() ?>Pages/promoKuy">Promo Kuy</a>
@@ -67,8 +75,12 @@
 					</li>
 				</ul>
 				<?php
-				if ($this->session->userdata('username')) : ?>
-					<a href="<?= base_url(); ?>admin" class="btn btn-primary mr-2"><?php echo $this->session->userdata('username'); ?></a>
+				if ($this->session->userdata('username')) :
+					if ($this->session->userdata('role_id') == 1) : ?>
+						<a href="<?= base_url(); ?>admin" class="btn btn-primary mr-2"><?php echo $this->session->userdata('username'); ?></a>
+					<?php elseif ($this->session->userdata('role_id') == 2) : ?>
+						<a href="<?= base_url(); ?>customer" class="btn btn-primary mr-2"><?php echo $this->session->userdata('username'); ?></a>
+					<?php endif; ?>
 					<a href="<?= base_url(); ?>auth/logout" class="btn btn-danger" onclick="return confirm('Apakah kamu yakin ingin logout?');">Logout</a>
 				<?php else : ?> <a href="<?= base_url() ?>Auth/register" class="btn btn-light btn-xs mr-2">Daftar</a>
 					<a href="<?= base_url() ?>Auth" class="btn btn-primary btn-xs mr-2">Masuk</a>

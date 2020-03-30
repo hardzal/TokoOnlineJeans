@@ -37,3 +37,8 @@ function random_str(
 	}
 	return implode('', $pieces);
 }
+
+function idr_format($number)
+{
+	return number_format($number, 0, ',', '.');
+}

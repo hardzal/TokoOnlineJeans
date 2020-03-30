@@ -30,13 +30,6 @@ class Pages extends CI_Controller
 		$this->load->view("templates/footer");
 	}
 
-	public function orderStatus()
-	{
-		$this->load->view("templates/header");
-		$this->load->view("pages/order-status");
-		$this->load->view("templates/footer");
-	}
-
 	public function promoKuy()
 	{
 		$this->load->view("templates/header");

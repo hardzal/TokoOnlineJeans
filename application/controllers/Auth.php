@@ -7,7 +7,7 @@ class Auth extends CI_Controller
 	{
 		parent::__construct();
 
-		$this->load->model('Auth_model', 'auth');
+		$this->load->model('Auth_Model', 'auth');
 	}
 
 	public function index()
@@ -35,6 +35,11 @@ class Auth extends CI_Controller
 				flash_message('danger', $result['message'], 'auth');
 			}
 		}
+	}
+
+	public function login()
+	{
+		redirect(base_url('auth'));
 	}
 
 	public function register()

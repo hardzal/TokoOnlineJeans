@@ -86,6 +86,9 @@
 								<a class="nav-link" href="<?= base_url(); ?>user/index"><i class="fa fa-fw fa-users"></i>Data Customer</a>
 							</li>
 							<li class="nav-item">
+								<a class="nav-link" href="<?= base_url(); ?>admin/tag"><i class="fa fa-fw fa-tags"></i>Data Tag</a>
+							</li>
+							<li class="nav-item">
 								<a class="nav-link" href="<?= base_url(); ?>admin/katalog"><i class="fas fa-fw fa-tags"></i>Data Katalog</a>
 							</li>
 							<li class="nav-item">

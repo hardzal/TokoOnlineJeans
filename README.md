@@ -8,12 +8,21 @@
 - [ ] CRUD Profile
 - [ ] CRUD Order
 - [ ] CRUD Payment
-- [ ] Menu Shopping Cart
-- [ ] Menu Promo 
-- [ ] Menu Q&A via WhatsApp
-- [ ] Tampilan Product
+- [x] Menu Shopping Cart
+- [x] Menu Promo 
+- [x] Menu Q&A via WhatsApp
+- [x] Tampilan Product
 - [ ] Filter Product
-- [ ] Profil Perusahaan
+- [x] Profil Perusahaan
+- [ ] Dashboard Customer
+- [x] Proses Order
+- [x] Proses Pembayaran
+- [x] Proses Konfirmasi Produk
+- [ ] Invoice Pembayaran
+- [ ] Penghasilan Perbulan
+- [ ] Item Best Seller
+- [ ] Data Pelanggan
+- [ ] Voucher Promo
 
 ## Concept Admin Template
 #### Tampilan
