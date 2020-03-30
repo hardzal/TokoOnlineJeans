@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Mar 25, 2020 at 03:17 AM
+-- Generation Time: Mar 30, 2020 at 03:15 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.5
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `collections` (
   `stock` int(11) NOT NULL,
   `type` int(11) NOT NULL,
   `permalink` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `catalog_id` (`catalog_id`)
@@ -150,17 +150,10 @@ CREATE TABLE IF NOT EXISTS `faqs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `question` varchar(255) NOT NULL,
   `answer` text NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `faqs`
---
-
-INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALUES
-(3, 'Apakah besok hari senin?', 'Iya, kenapa? Pasti bisa kan', NULL, '2020-02-26 08:12:54');
 
 -- --------------------------------------------------------
 
@@ -174,12 +167,30 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `collection_id` int(11) NOT NULL,
   `payment_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
+  `status` int(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `collection_id` (`collection_id`),
   KEY `user_id` (`user_id`),
   KEY `payment_id` (`payment_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `collection_id`, `payment_id`, `user_id`, `status`, `created_at`, `updated_at`) VALUES
+(8, 17, 8, 6, 0, '2020-03-30 13:54:03', NULL);
+
+--
+-- Triggers `orders`
+--
+DROP TRIGGER IF EXISTS `delete_order_details`;
+DELIMITER $$
+CREATE TRIGGER `delete_order_details` AFTER DELETE ON `orders` FOR EACH ROW DELETE FROM order_details WHERE order_id = old.id
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -191,13 +202,21 @@ DROP TABLE IF EXISTS `order_details`;
 CREATE TABLE IF NOT EXISTS `order_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
-  `status` int(11) NOT NULL,
-  `total` int(11) NOT NULL,
+  `size_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
   `address` text,
   `description` text,
+  `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `order_details`
+--
+
+INSERT INTO `order_details` (`id`, `order_id`, `size_id`, `quantity`, `address`, `description`, `updated_at`) VALUES
+(5, 8, 4, 3, 'Jalan KH Agus Salim', NULL, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -212,7 +231,14 @@ CREATE TABLE IF NOT EXISTS `paymentmethods` (
   `name` varchar(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `paymentmethods`
+--
+
+INSERT INTO `paymentmethods` (`id`, `code`, `name`, `description`) VALUES
+(1, '1321391-9301293201-3129312', 'BCA a/n Admin MA', NULL);
 
 -- --------------------------------------------------------
 
@@ -227,13 +253,36 @@ CREATE TABLE IF NOT EXISTS `payments` (
   `paymentMethod_id` int(11) NOT NULL,
   `paymentCode` varchar(255) NOT NULL,
   `customerName` varchar(255) NOT NULL,
-  `total` int(11) NOT NULL,
+  `hp` varchar(12) NOT NULL,
+  `total_quantity` int(11) NOT NULL,
   `total_price` double NOT NULL,
   `picture` text,
-  `created_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `paymentMethod_id` (`paymentMethod_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `payments`
+--
+
+INSERT INTO `payments` (`id`, `status`, `paymentMethod_id`, `paymentCode`, `customerName`, `hp`, `total_quantity`, `total_price`, `picture`, `created_at`, `updated_at`) VALUES
+(8, 0, 1, '1585576430414120', 'First Customer', '08781389321', 1, 90000, '83882082_2446323265472791_776676244853882880_n-1585576443.jpg', '2020-03-30 13:54:03', NULL);
+
+--
+-- Triggers `payments`
+--
+DROP TRIGGER IF EXISTS `delete_order`;
+DELIMITER $$
+CREATE TRIGGER `delete_order` AFTER DELETE ON `payments` FOR EACH ROW DELETE FROM orders WHERE payment_id = old.id
+$$
+DELIMITER ;
+DROP TRIGGER IF EXISTS `update_orders`;
+DELIMITER $$
+CREATE TRIGGER `update_orders` AFTER UPDATE ON `payments` FOR EACH ROW UPDATE orders SET status = 1 WHERE payment_id = old.id
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -269,7 +318,7 @@ DROP TABLE IF EXISTS `tags`;
 CREATE TABLE IF NOT EXISTS `tags` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tag` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -291,7 +340,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `role_id` (`role_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -299,9 +348,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `role_id`, `username`, `email`, `password`, `created_at`, `updated_at`) VALUES
 (1, 1, 'admin', 'admin@denim.com', '$2y$10$T4wgNRL./nADK9CQZ7Tj9e/4ctg9PNv3oe3V8GGI062CzQBjG7EsK', '2020-02-06 15:35:19', NULL),
-(2, 2, 'customer', 'customer@gmail.com', '$2y$10$61Zv0lgFlE9sN8vMLigvZeMC2sKpAAikBshCclshoNNNXrOBsHe3K', '2020-02-06 15:35:19', NULL),
 (5, 2, 'rahmat', 'rahmat@gmail.com', '$2y$10$Wuu9H/FloP5BNh.5iSW4wephLDx2JsfXxgLT0AUhJw0kDkc/u1u7q', '2020-02-10 08:31:03', '2020-02-25 00:25:07'),
-(6, 2, 'first_customer', 'first_customer@gmail.com', '$2y$10$2i77gKt7wllhTCACeAUKdeq2hqVO4/y.qkjmlozBHSHwdp.fk0pr2', '2020-02-24 07:20:51', NULL);
+(6, 2, 'first_customer', 'first_customer@gmail.com', '$2y$10$F5GX0feuIJc/2UDTSYfgv.c6v8F7dn5EXvAe4d40GqBaFpeLD4CXC', '2020-02-24 07:20:51', NULL),
+(10, 2, 'new_customer', 'new_customer@gmail.com', '$2y$10$iodT7FTbmwYVxHJkTP7pFOTHhxVg7dXhdZBXEWG1epoOXg2BbiEDq', '2020-03-25 14:08:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -320,7 +369,7 @@ CREATE TABLE IF NOT EXISTS `user_details` (
   `telp` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_details`
@@ -328,7 +377,8 @@ CREATE TABLE IF NOT EXISTS `user_details` (
 
 INSERT INTO `user_details` (`id`, `user_id`, `picture`, `nama_lengkap`, `jenis_kelamin`, `alamat`, `telp`) VALUES
 (2, 5, 'default.jpg', 'Rahmat Zumarli', 'L', 'jalan catur tunggal', '023191031212'),
-(3, 6, 'default.jpg', 'First Customer', 'L', 'Jalan KH Agus Salim', '08781389321');
+(3, 6, 'default.jpg', 'First Customer', 'L', 'Jalan KH Agus Salim', '08781389321'),
+(7, 10, '', 'Customer New', 'L', 'Jalan menuju rumahnya', '08781389381');
 
 -- --------------------------------------------------------
 
