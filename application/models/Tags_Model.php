@@ -1,6 +1,7 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Tag_Model extends CI_Model
+class Tags_Model extends CI_Model
 {
 	protected const TABLE_NAME = "tags";
 

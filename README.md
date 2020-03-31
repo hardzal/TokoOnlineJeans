@@ -43,7 +43,7 @@
  - [X] Tampilan PromoKuy
  - [x] Tampilan Profil Admin
  - [x] Tampilan FAQ
- - [ ] Tampilan Profil User
+ - [x] Tampilan Profil User
 -------------
 # User Login
 - admin:secret [admin]
@@ -51,3 +51,9 @@
 ---
 custom 404 pages?
 --
+
+------------------
+ - [x] Tampilan FAQ sudah sesuai Database
+ - [ ] Edit Profile
+ - [ ] CRUD Tags
+ - [ ] Tampilan Tags
