@@ -97,6 +97,9 @@
 							<li class="nav-item">
 								<a href="<?= base_url(); ?>admin/methodpayments" class="nav-link"><i class="fab fa-cc-amazon-pay"></i>Data Metode Pembayaran</a>
 							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="<?= base_url(); ?>admin/tags"><i class="fas fa-fw fa-list-alt"></i>Data Tag</a>
+							</li>
 						</ul>
 					</div>
 				</nav>

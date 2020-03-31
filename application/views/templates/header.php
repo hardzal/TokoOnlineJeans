@@ -45,7 +45,7 @@
 						<a class="nav-link" href="<?= base_url() ?>Collection">Koleksi</a>
 					</li>
 					<li class="nav-item mx-3 ">
-						<a class="nav-link" href="<?= base_url() ?>Order"><span class='badge badge-primary mr-2'><?php echo @count($this->session->userdata('orders')) ?? 0; ?></span>Shopping Cart</a>
+						<a class="nav-link" href="<?= base_url() ?>Order">Shopping Cart <span class='badge badge-primary mr-2'><?php echo @count($this->session->userdata('orders')) ?? 0; ?></span></a>
 					</li>
 					<li class="nav-item mx-3">
 						<a class="nav-link" href="<?= base_url() ?>Order/payment">Pembayaran</a>
@@ -68,7 +68,7 @@
 				</ul>
 				<?php
 				if ($this->session->userdata('username')) : ?>
-					<a href="<?= base_url(); ?>admin" class="btn btn-primary mr-2"><?php echo $this->session->userdata('username'); ?></a>
+					<a href="<?= base_url(); ?>pages/profile" class="btn btn-primary mr-2"><?php echo $this->session->userdata('username'); ?></a>
 					<a href="<?= base_url(); ?>auth/logout" class="btn btn-danger" onclick="return confirm('Apakah kamu yakin ingin logout?');">Logout</a>
 				<?php else : ?> <a href="<?= base_url() ?>Auth/register" class="btn btn-light btn-xs mr-2">Daftar</a>
 					<a href="<?= base_url() ?>Auth" class="btn btn-primary btn-xs mr-2">Masuk</a>
