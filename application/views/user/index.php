@@ -11,7 +11,6 @@
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Menu Utama</a></li>
 							<li class="breadcrumb-item">Kelola Akun</li>
-							<li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Admin</a></li>
 						</ol>
 					</nav>
 				</div>

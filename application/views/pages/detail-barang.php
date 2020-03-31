@@ -11,7 +11,7 @@
 							</ol> -->
 							<div class="carousel-inner">
 								<div class="carousel-item active">
-									<img class="d-block w-100 img-thumbnail" src="<?= base_url() ?>assets/images/collections/<?php echo $jeans->img; ?>" alt="First slide" style="width: 285px; height: 313px">
+									<img class="d-block w-100 img-thumbnail" src="<?= base_url() ?>assets/images/collections/<?php echo $jeans->img; ?>" alt="First slide">
 								</div>
 							</div>
 							<!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

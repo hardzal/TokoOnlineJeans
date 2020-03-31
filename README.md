@@ -13,7 +13,7 @@
 - [ ] Menu Q&A via WhatsApp
 - [ ] Tampilan Product
 - [ ] Filter Product
-- [ ] Profil Perusahaan
+- [x] Profil Perusahaan
 
 ## Concept Admin Template
 #### Tampilan
@@ -44,6 +44,10 @@ custom 404 pages?
 
 ------------------
  - [x] Tampilan FAQ sudah sesuai Database
- - [ ] Edit Profile
- - [ ] CRUD Tags
+ - [x] Edit Profile Customer
+ - [ ] Ganti Password Customer
+ - [ ] Edit Profile Admin
+ - [ ] Ganti Password Admin
+ - [x] CRUD Tags
  - [ ] Tampilan Tags
+ - [x] Perbaikan List Catalogs

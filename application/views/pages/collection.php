@@ -24,12 +24,12 @@
 		</div>
 		<div class="col-sm-12 mb-3">
 			<ul class="list-group">
+				<li class="list-group-item">
 				<?php foreach ($catalogs as $catalog) : ?>
-					<li class="list-group-item">
 						<a href="<?php echo base_url('catalog/') . $catalog->permalink; ?>" class="btn btn-primary"><?php echo $catalog->name; ?></a>
 						<!--<span class="badge badge-primary badge-pill">14</span>-->
-					</li>
 				<?php endforeach; ?>
+				</li>
 			</ul>
 		</div>
 	</div>
