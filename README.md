@@ -23,6 +23,7 @@
 - [ ] Item Best Seller
 - [ ] Data Pelanggan
 - [ ] Voucher Promo
+- [ ] Pencatatan alamat manual.
 
 ## Concept Admin Template
 #### Tampilan
