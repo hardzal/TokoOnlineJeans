@@ -41,6 +41,40 @@ $(document).ready(function () {
 		});
 	});
 
+	$("#tambahTag").on('click', function (e) {
+		e.preventDefault();
+		const link = $(this).data('link');
+		$('#tagForm').prop('action', link);
+
+		$('.tag-modal-title').html("Tambah data tag");
+		$('#tagForm')[0].reset();
+	});
+
+	$(".editTag").on('click', function (e) {
+		e.preventDefault();
+		const link = $(this).data('link');
+		const tag_id = $(this).data('id');
+
+		$('#tagForm').prop('action', link);
+		$('.tag-modal-title').html("Edit data tag");
+		$('#tagForm')[0].reset();
+
+		$.ajax({
+			url: link,
+			data: {
+				id: tag_id,
+			},
+			method: 'POST',
+			dataType: 'json',
+			success: function (data) {
+				$('#namaTag').val(data.tag);
+				// $('#deskripsiKatalog').val(data.description);
+				$('#idTag').val(data.id);
+				console.log(data);
+			}
+		});
+	});
+
 	$("#tambahCollection").on('click', function (e) {
 		e.preventDefault();
 		const link = $(this).data('link');

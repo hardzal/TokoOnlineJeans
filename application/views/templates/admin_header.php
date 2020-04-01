@@ -86,7 +86,7 @@
 								<a class="nav-link" href="<?= base_url(); ?>user/index"><i class="fa fa-fw fa-users"></i>Data Customer</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="<?= base_url(); ?>admin/tag"><i class="fa fa-fw fa-tags"></i>Data Tag</a>
+								<a class="nav-link" href="<?= base_url(); ?>admin/tags"><i class="fa fa-fw fa-tags"></i>Data Tag</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="<?= base_url(); ?>admin/katalog"><i class="fas fa-fw fa-tags"></i>Data Katalog</a>
@@ -101,7 +101,7 @@
 								<a href="<?= base_url(); ?>admin/methodpayments" class="nav-link"><i class="fab fa-cc-amazon-pay"></i>Data Metode Pembayaran</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="<?= base_url(); ?>admin/tags"><i class="fas fa-fw fa-list-alt"></i>Data Tag</a>
+								<a href="<?= base_url(); ?>admin/profile" class="nav-link"><i class="fas fa-user"></i>Edit Profile</a>
 							</li>
 						</ul>
 					</div>

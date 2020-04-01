@@ -9,7 +9,7 @@
                </a>
                 <!-- /.user-avatar -->
                 <h3 class="card-title mb-2 text-truncate">
-                <a href="">Nama Admin</a>
+                <a href=""><!-- <?=$users->nama_lengkap;?> --> Nama</a>
                   </h3>
                 <h6 class="card-subtitle text-muted mb-3"> Admin </h6>
                 <!-- .skills -->
@@ -22,7 +22,7 @@
                     <a href="#" class="btn btn-xs btn-warning circle mt-1">3+</a>
                 </p> -->
                 <!-- /.skills -->
-                <p class="text-muted"> Deskripsi (kalo ada) </p>
+                <!-- <p class="text-muted"> Deskripsi (kalo ada) </p> -->
                 <a href="<?=base_url()?>Admin/changePassword" class="btn btn-warning btn-rounded">Ubah Password</a>
 
             </div>
@@ -75,6 +75,12 @@
                     <div class="form group mx-4 my-4">
                         <label class="font-16" style="font-weight: bold;">No. Telp</label>
                         <input type="text" name="notelp" value="No Telepon" class="form-control">
+                    </div>
+                </form>
+                <form id="basicform">
+                    <div class="form group mx-4 my-4">
+                        <label class="font-16" style="font-weight: bold;">Email</label>
+                        <input type="email" name="email" value="" class="form-control">
                     </div>
                 </form>
             </div>

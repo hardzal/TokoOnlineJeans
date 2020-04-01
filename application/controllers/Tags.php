@@ -40,6 +40,7 @@ class Tags extends CI_Controller
 	public function edit($id)
 	{
 		$tag = $this->tags->get($id);
+
 		$this->form_validation->set_rules('nama', 'Nama Tag', 'required|trim|min_length[3]');
 
 		if ($this->form_validation->run() == false) {

@@ -12,7 +12,7 @@ class Auth extends CI_Controller
 
 	public function index()
 	{
-		isLogin();
+		logged();
 
 		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[4]');
@@ -44,6 +44,8 @@ class Auth extends CI_Controller
 
 	public function register()
 	{
+		logged();
+
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|is_unique[users.username]');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[4]');

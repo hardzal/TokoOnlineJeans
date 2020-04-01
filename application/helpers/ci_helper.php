@@ -18,6 +18,14 @@ function flash_message($type, $message, $url)
 function isLogin()
 {
 	$ci = &get_instance();
+	if (!$ci->session->userdata('user_id')) {
+		redirect('pages');
+	}
+}
+
+function logged()
+{
+	$ci = &get_instance();
 	if ($ci->session->userdata('user_id')) {
 		redirect('pages');
 	}

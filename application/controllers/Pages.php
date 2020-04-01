@@ -18,21 +18,27 @@ class Pages extends CI_Controller
 
 	public function aboutUs()
 	{
-		$this->load->view("templates/header");
+		$data['title'] = "Tentang Kami";
+
+		$this->load->view("templates/header", $data);
 		$this->load->view("pages/about");
 		$this->load->view("templates/footer");
 	}
 
 	public function QandA()
 	{
-		$this->load->view("templates/header");
+		$data['title'] = "Tanya Jawab";
+
+		$this->load->view("templates/header", $data);
 		$this->load->view("pages/QandA");
 		$this->load->view("templates/footer");
 	}
 
 	public function promoKuy()
 	{
-		$this->load->view("templates/header");
+		$data['title'] = "Promo Terbatas";
+
+		$this->load->view("templates/header", $data);
 		$this->load->view("pages/promoKuy");
 		$this->load->view("templates/footer");
 	}
@@ -44,12 +50,13 @@ class Pages extends CI_Controller
 		$this->load->model('Faq_Model', 'faq');
 		$data['faqs'] = $this->faq->getAll();
 
-		$this->load->view("templates/header",$data);
+		$this->load->view("templates/header", $data);
 		$this->load->view("pages/faq");
 		$this->load->view("templates/footer");
 	}
 
-	public function profile(){
+	public function profile()
+	{
 		$data['title'] = "Profil Pengguna";
 		$this->load->model('User_Model', 'user');
 		$data['users'] = $this->user->get($_SESSION['user_id']);
@@ -61,8 +68,8 @@ class Pages extends CI_Controller
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim|min_length[5]');
 		$this->form_validation->set_rules('telp', 'Telp', 'required|trim|numeric|min_length[10]|max_length[12]');
 
-		if($this->form_validation->run() == false){
-			$this->load->view("templates/header",$data);
+		if ($this->form_validation->run() == false) {
+			$this->load->view("templates/header", $data);
 			$this->load->view("pages/profile");
 			$this->load->view("templates/footer");
 		} else {
@@ -89,7 +96,7 @@ class Pages extends CI_Controller
 				],
 			];
 
-			if ($this->user->update($data,$user_id)) {
+			if ($this->user->update($data, $user_id)) {
 				flash_message('success', '<strong>Berhasil</strong> <em>memperbaharui</em> Profil Pengguna', 'pages/profile');
 			} else {
 				flash_message('danger', '<strong>Gagal</strong> <em>memperbaharui</em> Profil Pengguna', 'pages/profile');
@@ -97,13 +104,14 @@ class Pages extends CI_Controller
 		}
 	}
 
-	public function ubahPassword(){
+	public function ubahPassword()
+	{
 		$data['title'] = "Profil Pengguna";
 		$this->load->model('User_Model', 'user');
 		$data['users'] = $this->user->get($_SESSION['user_id']);
 
 
-		$this->load->view("templates/header",$data);
+		$this->load->view("templates/header", $data);
 		$this->load->view("pages/ubah-password");
 		$this->load->view("templates/footer");
 	}

@@ -21,7 +21,7 @@
 - [ ] Invoice Pembayaran
 - [ ] Penghasilan Perbulan
 - [ ] Item Best Seller
-- [ ] Data Pelanggan
+- [x] Data Pelanggan
 - [ ] Voucher Promo
 - [ ] Pencatatan alamat manual.
 
@@ -54,6 +54,10 @@ custom 404 pages?
 
 ------------------
  - [x] Tampilan FAQ sudah sesuai Database
- - [ ] Edit Profile
- - [ ] CRUD Tags
+ - [x] Edit Profile Customer
+ - [ ] Ganti Password Customer
+ - [ ] Edit Profile Admin
+ - [ ] Ganti Password Admin
+ - [x] CRUD Tags
  - [ ] Tampilan Tags
+ - [x] Perbaikan List Catalogs
