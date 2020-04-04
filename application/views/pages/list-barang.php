@@ -105,7 +105,7 @@
 							<div class="product-thumbnail">
 								<div class="product-img-head">
 									<div class="product-img">
-										<a href="<?php echo base_url('collection/') . $collection->code . "/" . $collection->permalink; ?>" title="<?php echo $collection->name; ?>"><img src="<?= base_url() ?>assets/images/collections/<?php echo $collection->img; ?>" alt="<?php echo $collection->img; ?>" class="img-fluid"></a>
+										<a href="<?php echo base_url('collection/') . $collection->code . "/" . $collection->permalink; ?>" title="<?php echo $collection->name; ?>"><img src="<?= base_url() ?>assets/images/collections/<?php echo $collection->img; ?>" alt="<?php echo $collection->img; ?>" class="img-fluid" style="object-fit: cover; width: 280px; height: 280px;"></a>
 									</div>
 								</div>
 								<div class="product-content">

@@ -55,9 +55,9 @@ custom 404 pages?
 ------------------
  - [x] Tampilan FAQ sudah sesuai Database
  - [x] Edit Profile Customer
- - [ ] Ganti Password Customer
- - [ ] Edit Profile Admin
- - [ ] Ganti Password Admin
+ - [x] Ganti Password Customer
+ - [x] Edit Profile Admin
+ - [x] Ganti Password Admin
  - [x] CRUD Tags
- - [ ] Tampilan Tags
+ - [ ] Tampilan Tags??
  - [x] Perbaikan List Catalogs
