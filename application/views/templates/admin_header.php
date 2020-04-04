@@ -73,10 +73,10 @@
 								<a class="nav-link" href="<?= base_url(); ?>Admin" aria-expanded="false"><i class="fa fa-fw fa-info"></i>Dashboard</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="<?= base_url(); ?>Admin/pembayaran" aria-expanded="false"><i class="fas fa-shopping-cart"></i>Data Pembayaran</a>
+								<a class="nav-link" href="<?= base_url(); ?>Admin/payments" aria-expanded="false"><i class="fas fa-shopping-cart"></i>Data Pembayaran</a>
 							</li>
 							<li>
-								<a class="nav-link" href="<?= base_url(); ?>Admin/order" aria-expanded="false"><i class="fa fa-fw fa-list"></i>Data Order</a>
+								<a class="nav-link" href="<?= base_url(); ?>Admin/orders" aria-expanded="false"><i class="fa fa-fw fa-list"></i>Data Order</a>
 							</li>
 
 							<li class="nav-divider">

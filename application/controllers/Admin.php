@@ -7,33 +7,47 @@ class Admin extends CI_Controller
 	{
 		parent::__construct();
 		isLogin();
+
+		$this->load->model('Order_Model', 'order');
+		$this->load->model('Payment_Model', 'payment');
 	}
 
 	public function index()
 	{
 		$data['title'] = "Dashboard";
+		$data['payments'] = $this->payment->getAll();
 
 		$this->load->view("templates/admin_header", $data);
 		$this->load->view("admin/dashboard", $data);
 		$this->load->view("templates/admin_footer");
 	}
 
-	public function pembayaran()
+	public function payments()
 	{
 		$data['title'] = "Pembayaran";
+		$data['payments'] = $this->payment->getAll();
 
-		$this->load->view("templates/admin_header");
-		$this->load->view("admin/pembayaran");
+		$this->load->view("templates/admin_header", $data);
+		$this->load->view("admin/payment", $data);
 		$this->load->view("templates/admin_footer");
 	}
 
-	public function order()
+	public function orders()
 	{
 		$data['title'] = "Daftar Order";
+		$data['orders'] = $this->order->getAll();
 
 		$this->load->view("templates/admin_header", $data);
-		$this->load->view("admin/order");
+		$this->load->view("admin/order", $data);
 		$this->load->view("templates/admin_footer");
+	}
+
+	public function editOrder()
+	{
+	}
+
+	public function deleteOrder()
+	{
 	}
 
 	public function profile()
@@ -43,7 +57,6 @@ class Admin extends CI_Controller
 
 		$this->load->model('User_Model', 'user');
 		$data['users'] = $this->user->get($_SESSION['user_id']);
-		var_dump($data);
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		// $this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|is_unique[users.username]');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|min_length[4]|valid_email');

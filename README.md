@@ -61,3 +61,17 @@ custom 404 pages?
  - [x] CRUD Tags
  - [ ] Tampilan Tags
  - [x] Perbaikan List Catalogs
+
+------------
+Order
+
+No | Username | Nama Barang | Kategori |Total Barang | Harga Total | Tanggal Order | Status
+
+-------------
+
+Payment
+
+No | Kode Payment | Username | Tanggal Pembayaran | Total Pembayaran  | Status
+
+-------------------
+

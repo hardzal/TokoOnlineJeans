@@ -5,12 +5,12 @@
 	<div class="row">
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 			<div class="page-header">
-				<h2 class="pageheader-title">Data Order</h2>
+				<h2 class="pageheader-title">Data Pembayaran</h2>
 				<div class="page-breadcrumb">
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Master Data</a></li>
-							<li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Data Order</a></li>
+							<li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Data Pembayaran</a></li>
 						</ol>
 					</nav>
 				</div>
@@ -177,8 +177,8 @@
 						<?php endif; ?>
 						<?php echo $this->session->flashdata('message'); ?>
 						<div class="card-body">
-							<?php if (empty($orders)) : ?>
-								<p class="alert alert-info">Tidak ada data order</p>
+							<?php if (empty($payments)) : ?>
+								<p class="alert alert-info">Tidak ada data pembayaran</p>
 							<?php else :
 								$no = 1;
 							?>
@@ -187,32 +187,30 @@
 										<thead>
 											<tr>
 												<th>No</th>
+												<th>Kode Pembayaran</th>
 												<th>Username</th>
-												<th>Nama Barang</th>
-												<th>Kategori</th>
 												<th>Total Barang</th>
-												<th>Harga Total</th>
-												<th>Waktu Order</th>
+												<th>Total Pembayaran</th>
+												<th>Waktu Checkout</th>
 												<th>Batas Pembayaran</th>
 												<th>Status</th>
 												<th>Aksi</th>
 											</tr>
 										</thead>
 										<tbody>
-											<?php foreach ($orders as $order) : ?>
+											<?php foreach ($payments as $payment) : ?>
 												<tr>
 													<td><?php echo $no++; ?></td>
-													<td><?php echo $order->username; ?></td>
-													<td><?php echo $order->collection_name; ?></td>
-													<td><?php echo $order->catalog_name; ?></td>
-													<td><?php echo $order->quantity; ?></td>
-													<td>Rp <?php echo idr_format($order->quantity * $order->price); ?></td>
-													<td><?php echo $order->created_at; ?></td>
-													<td><?php echo date('Y-m-d H:i:s', strtotime($order->created_at) + 3600); ?></td>
-													<td><?php echo status_button($order->status); ?></td>
+													<td><?php echo $payment->paymentCode; ?></td>
+													<td><?php echo $payment->username; ?></td>
+													<td><?php echo $payment->total_quantity; ?></td>
+													<td>Rp <?php echo idr_format($payment->total_quantity * $payment->total_price); ?></td>
+													<td><?php echo $payment->created_at; ?></td>
+													<td><?php echo date('Y-m-d H:i:s', strtotime($payment->created_at) + 3600); ?></td>
+													<td><?php echo status_button($payment->status); ?></td>
 													<td class="text-center">
-														<a class="btn btn-xs btn-warning mr-3 editOrder" href="<?php echo base_url('admin/order/edit'); ?>" data-toggle="modal" data-target="#ModalOrder" data-id="<?php echo $order->id; ?>" data-link="<?php echo base_url('admin/order/edit') ?>">Edit</a>
-														<a class="btn btn-xs btn-danger" href="<?php echo base_url('admin/order/hapus/') . $order->id; ?>" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?')">Hapus</a>
+														<a class="btn btn-xs btn-warning mr-3 editOrder" href="<?php echo base_url('admin/order/edit'); ?>" data-toggle="modal" data-target="#ModalOrder" data-id="<?php echo $payment->id; ?>" data-link="<?php echo base_url('admin/payment/edit') ?>">Edit</a>
+														<a class="btn btn-xs btn-danger" href="<?php echo base_url('admin/payment/hapus/') . $payment->id; ?>" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?')">Hapus</a>
 													</td>
 												</tr>
 											<?php endforeach; ?>
