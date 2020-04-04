@@ -72,20 +72,36 @@
                                 <div class="card">
                                     <h5 class="card-header">Ubah Password</h5>
                                     <div class="card-body">
-                                        <form>
+                                        <?php if (validation_errors()) : ?>
+                                            <div class="alert alert-danger">
+                                                <?php echo validation_errors(); ?>
+                                            </div>
+                                        <?php else :
+                                            echo $this->session->userdata('message');
+                                        endif; ?>
+                                        <form class="needs-validation" method="POST" action="" id="userForm">
                                             <div class="row">
                                                 <div class="offset-xl-3 col-xl-6 offset-lg-3 col-lg-3 col-md-12 col-sm-12 col-12 p-4">
                                                     <div class="form-group">
                                                         <label for="passLama">Password Lama</label>
-                                                        <input type="password" class="form-control form-control-lg" id="passLama" placeholder="">
+                                                        <input type="password" class="form-control form-control-lg" name="passLama" placeholder="">
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('passLama', '<small class="text-danger">', '</small>'); ?>
+                                                        </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="passBaru">Password Baru</label>
-                                                        <input type="password" class="form-control form-control-lg" id="passBaru" placeholder="">
+                                                        <input type="password" class="form-control form-control-lg" name="passBaru" placeholder="">
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('passBaru', '<small class="text-danger">', '</small>'); ?>
+                                                        </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="konfirmasi">Konfirmasi Password Baru</label>
-                                                        <input type="password" class="form-control form-control-lg" id="konfirmasi" placeholder="">
+                                                        <input type="password" class="form-control form-control-lg" name="konfirmasi" placeholder="">
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('konfirmasi', '<small class="text-danger">', '</small>'); ?>
+                                                        </div>
                                                     </div>
                                                     
                                                     <button type="submit" class="btn btn-primary float-right mt-3">Simpan Perubahan</button>

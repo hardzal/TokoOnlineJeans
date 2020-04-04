@@ -9,7 +9,7 @@
                </a>
                 <!-- /.user-avatar -->
                 <h3 class="card-title mb-2 text-truncate">
-                <a href=""><!-- <?=$users->nama_lengkap;?> --> Nama</a>
+                <a href=""><!-- <?=$users->nama_lengkap;?> --> <?php echo $users->nama_lengkap; ?></a>
                   </h3>
                 <h6 class="card-subtitle text-muted mb-3"> Admin </h6>
                 <!-- .skills -->
@@ -36,57 +36,79 @@
                     Information
                 </h3>
             </div>
-            <div class="card-body">
-                <form id="basicform">
+            
+            <form id="basicform" class="needs-validation" method="POST" action="" id="userForm">
+                <?php if (validation_errors()) : ?>
+                    <div class="alert alert-danger">
+                        <?php echo validation_errors(); ?>
+                    </div>
+                <?php else :
+                    echo $this->session->userdata('message');
+                endif; ?>
+                <div class="card-body">
+                <!-- <form id="basicform" class="needs-validation" method="POST" action="" id="userForm"> -->
                     <div class="form group mx-4 my-4">
                         <label class="font-16" style="font-weight: bold;">Username</label>
-                        <input type="text" name="username" value="Username" class="form-control">
+                        <input type="text" name="username" value="<?=$users->username;?>" class="form-control" readonly>
                     </div>
-                </form>
-                <form id="basicform">
+                <!-- </form> -->
+                <!-- <form id="basicform"> -->
                     <div class="form group mx-4 my-4">
                         <label class="font-16" style="font-weight: bold;">Nama Lengkap</label>
-                        <input type="text" name="nama_lengkap" value="Nama Lengkap" class="form-control">
+                        <input type="text" name="nama_lengkap" value="<?=$users->nama_lengkap;?>" class="form-control">
+                        <div class="invalid-feedback">
+                            <?php echo form_error('nama_lengkap', '<small class="text-danger">', '</small>'); ?>
+                        </div>
                     </div>
-                </form>
-                <form id="basicform">
+                <!-- </form> -->
+                <!-- <form id="basicform"> -->
                     <div class="form group mx-4 my-4">
                         <label class="font-16" style="font-weight: bold;">Jenis Kelamin</label>
                         <br>
                         <div>
                             <label class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" name="jenis-kelamin" value="L" class="custom-control-input"><span class="custom-control-label">Laki-laki</span>
+                                <input type="radio" name="jenis-kelamin" value="L" class="custom-control-input" <?php if($users->jenis_kelamin == 'L' ) { echo "checked"; } ?>><span class="custom-control-label">Laki-laki</span>
                             </label>
                             <label class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" name="jenis-kelamin" value="P" class=" custom-control-input"><span class="custom-control-label">Perempuan</span>
+                                <input type="radio" name="jenis-kelamin" value="P" class=" custom-control-input" <?php if($users->jenis_kelamin == 'P' ) { echo "selected"; } ?>><span class="custom-control-label">Perempuan</span>
                             </label>
 
                         </div>
                     </div>
-                </form>
-                <form id="basicform">
+                <!-- </form> -->
+                <!-- <form id="basicform"> -->
                     <div class="form group mx-4 my-4">
                         <label class="font-16" style="font-weight: bold;">Alamat</label>
                         <!-- <input type="text" name="username" value="Username" class="form-control"> -->
-                        <textarea name="alamat" class="form-control">Alamat</textarea>
+                        <textarea name="alamat" class="form-control"><?=$users->alamat;?></textarea>
+                        <div class="invalid-feedback">
+                            <?php echo form_error('alamat', '<small class="text-danger">', '</small>'); ?>
+                        </div>
                     </div>
-                </form>
-                <form id="basicform">
+                <!-- </form> -->
+                <!-- <form id="basicform"> -->
                     <div class="form group mx-4 my-4">
                         <label class="font-16" style="font-weight: bold;">No. Telp</label>
-                        <input type="text" name="notelp" value="No Telepon" class="form-control">
+                        <input type="text" name="telp" value="<?=$users->telp;?>" class="form-control">
+                        <div class="invalid-feedback">
+                            <?php echo form_error('telp', '<small class="text-danger">', '</small>'); ?>
+                        </div>
                     </div>
-                </form>
-                <form id="basicform">
+                <!-- </form> -->
+                <!-- <form id="basicform"> -->
                     <div class="form group mx-4 my-4">
                         <label class="font-16" style="font-weight: bold;">Email</label>
-                        <input type="email" name="email" value="" class="form-control">
+                        <input type="email" name="email" value="<?=$users->email;?>" class="form-control">
+                        <div class="invalid-feedback">
+                            <?php echo form_error('email', '<small class="text-danger">', '</small>'); ?>
+                        </div>
                     </div>
-                </form>
-            </div>
-            <div class="card-footer text-center ">
-                <input type="button" name="edit" class="btn btn-primary" value="Simpan Perubahan">
-            </div>
+                <!-- </form> -->
+                </div>
+                <div class="card-footer text-center ">
+                    <input type="submit" name="edit" class="btn btn-primary" value="Simpan Perubahan">
+                </div>
+            </form>
         </div>
     </div>    
 </div>
