@@ -8,12 +8,11 @@ class Payment_Model extends CI_Model
 	public function getAll()
 	{
 		return $this->db->select('payments.*, users.username')
-			->from('payments')
+			->from($this::TABLE_NAME)
 			->join('orders', 'payments.id=orders.payment_id')
 			->join('users', 'orders.user_id=users.id')
 			->get()
 			->result_object();
-		// return $this->db->get($this::TABLE_NAME)->result_object();
 	}
 
 	public function get($id)

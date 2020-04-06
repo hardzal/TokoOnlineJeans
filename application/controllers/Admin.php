@@ -32,27 +32,8 @@ class Admin extends CI_Controller
 		$this->load->view("templates/admin_footer");
 	}
 
-	public function orders()
-	{
-		$data['title'] = "Daftar Order";
-		$data['orders'] = $this->order->getAll();
-
-		$this->load->view("templates/admin_header", $data);
-		$this->load->view("admin/order", $data);
-		$this->load->view("templates/admin_footer");
-	}
-
-	public function editOrder()
-	{
-	}
-
-	public function deleteOrder()
-	{
-	}
-
 	public function profile()
 	{
-
 		$data['title'] = "Profile";
 
 		$this->load->model('User_Model', 'user');

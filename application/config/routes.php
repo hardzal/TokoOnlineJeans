@@ -69,3 +69,6 @@ $route['collection/type/(:any)'] = 'collection/listJeans/$1';
 $route['collection/(:any)/(:any)'] = 'collection/detailJeans/$1/$2';
 
 $route['admin/tags'] = 'Tags/list';
+
+$route['admin/payment/verify/(:any)'] = 'payment/verify/$1';
+$route['admin/payment/delete/(:any)'] = 'payment/delete/$1';

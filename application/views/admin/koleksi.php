@@ -46,7 +46,6 @@
 										<form id="collectionForm" class="needs-validation" method="POST" action="" enctype="multipart/form-data">
 											<div class="modal-body">
 												<div class="row">
-
 													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-2">
 														<label for="nama_barang">Nama Barang</label>
 														<input type="text" class="form-control" id="nama_barang" name="nama_barang" required value="<?php echo set_value('nama_barang'); ?>">

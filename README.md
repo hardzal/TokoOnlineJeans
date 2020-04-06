@@ -5,7 +5,6 @@
 - [x] CRUD Collection
 - [x] CRUD Catalog 
 - [x] CRUD Q&A
-- [ ] CRUD Profile
 - [ ] CRUD Order
 - [ ] CRUD Payment
 - [x] Menu Shopping Cart
@@ -23,7 +22,7 @@
 - [ ] Item Best Seller
 - [x] Data Pelanggan
 - [ ] Voucher Promo
-- [ ] Pencatatan alamat manual.
+- [ ] Biaya Kirim (Manual)
 
 ## Concept Admin Template
 #### Tampilan
@@ -44,15 +43,6 @@
  - [x] Tampilan Profil Admin
  - [x] Tampilan FAQ
  - [x] Tampilan Profil User
--------------
-# User Login
-- admin:secret [admin]
-- customer:password [customer]
----
-custom 404 pages?
---
-
-------------------
  - [x] Tampilan FAQ sudah sesuai Database
  - [x] Edit Profile Customer
  - [x] Ganti Password Customer
@@ -61,17 +51,8 @@ custom 404 pages?
  - [x] CRUD Tags
  - [ ] Tampilan Tags??
  - [x] Perbaikan List Catalogs
-
-------------
-Order
-
-No | Username | Nama Barang | Kategori |Total Barang | Harga Total | Tanggal Order | Status
-
 -------------
-
-Payment
-
-No | Kode Payment | Username | Tanggal Pembayaran | Total Pembayaran  | Status
-
--------------------
-
+# User Login
+- admin:secret [admin]
+- customer:password [customer]
+------------------
