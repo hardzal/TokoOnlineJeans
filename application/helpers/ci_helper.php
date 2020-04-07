@@ -50,3 +50,12 @@ function idr_format($number)
 {
 	return number_format($number, 0, ',', '.');
 }
+
+function status_button($status)
+{
+	if ($status) {
+		return "<span class='badge badge-success'>Sukses</span>";
+	}
+
+	return "<span class='badge badge-danger'>Belum dibayar</span>";
+}

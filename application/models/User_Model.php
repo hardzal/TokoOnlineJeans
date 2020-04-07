@@ -25,7 +25,7 @@ class User_Model extends CI_Model
 			->get()
 			->row_object();
 	}
-
+	
 	public function insert($data)
 	{
 		return $this->db->insert($this::TABLE_NAME, $data);
@@ -36,6 +36,21 @@ class User_Model extends CI_Model
 		$this->db->trans_start();
 		$this->db->update($this::TABLE_NAME, $data['users'], ['id' => $id]);
 		$this->db->update('user_details', $data['user_details'], ['user_id' => $id]);
+		$this->db->trans_complete();
+
+		if ($this->db->trans_status() == false) {
+			$this->db->trans_rollback();
+			return false;
+		}
+
+		$this->db->trans_commit();
+		return true;
+	}
+
+	public function updatePass($data, $id)
+	{
+		$this->db->trans_start();
+		$this->db->update($this::TABLE_NAME, $data['users'], ['id' => $id]);
 		$this->db->trans_complete();
 
 		if ($this->db->trans_status() == false) {

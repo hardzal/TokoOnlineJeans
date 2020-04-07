@@ -5,25 +5,24 @@
 - [x] CRUD Collection
 - [x] CRUD Catalog 
 - [x] CRUD Q&A
-- [ ] CRUD Profile
 - [ ] CRUD Order
 - [ ] CRUD Payment
 - [x] Menu Shopping Cart
 - [x] Menu Promo 
 - [x] Menu Q&A via WhatsApp
 - [x] Tampilan Product
-- [ ] Filter Product
 - [x] Profil Perusahaan
-- [ ] Dashboard Customer
 - [x] Proses Order
 - [x] Proses Pembayaran
 - [x] Proses Konfirmasi Produk
+- [ ] Filter Product
+- [ ] Dashboard Customer
 - [ ] Invoice Pembayaran
 - [ ] Penghasilan Perbulan
 - [ ] Item Best Seller
-- [x] Data Pelanggan
 - [ ] Voucher Promo
-- [ ] Pencatatan alamat manual.
+- [x] Data Pelanggan
+- [ ] Biaya Kirim (Manual)
 
 ## Concept Admin Template
 #### Tampilan
@@ -44,20 +43,16 @@
  - [x] Tampilan Profil Admin
  - [x] Tampilan FAQ
  - [x] Tampilan Profil User
+ - [x] Tampilan FAQ sudah sesuai Database
+ - [x] Edit Profile Customer
+ - [x] Ganti Password Customer
+ - [x] Edit Profile Admin
+ - [x] Ganti Password Admin
+ - [x] CRUD Tags
+ - [ ] Tampilan Tags??
+ - [x] Perbaikan List Catalogs
 -------------
 # User Login
 - admin:secret [admin]
 - customer:password [customer]
----
-custom 404 pages?
---
-
 ------------------
- - [x] Tampilan FAQ sudah sesuai Database
- - [x] Edit Profile Customer
- - [ ] Ganti Password Customer
- - [ ] Edit Profile Admin
- - [ ] Ganti Password Admin
- - [x] CRUD Tags
- - [ ] Tampilan Tags
- - [x] Perbaikan List Catalogs

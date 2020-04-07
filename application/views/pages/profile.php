@@ -47,7 +47,7 @@
                         </div>
                         <div class="card-body border-top text-center">
                             <div class="">
-                                <a href="<?=base_url()?>pages/ubahPassword" class="btn btn-sm btn-primary">Ubah Password</a>
+                                <a href="<?=base_url()?>customer/ubahPassword" class="btn btn-sm btn-primary">Ubah Password</a>
                             </ul>
                             </div>
                         </div>

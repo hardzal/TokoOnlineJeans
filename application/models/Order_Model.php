@@ -7,7 +7,15 @@ class Order_Model extends CI_Model
 
 	public function getAll()
 	{
-		return $this->db->get($this::TABLE_NAME)->result_object();
+		return $this->db->select('orders.*, users.username, catalogs.name as catalog_name, collections.name as collection_name, collections.price, order_details.quantity')
+			->from('orders')
+			->join('users', 'orders.user_id=users.id')
+			->join('collections', 'orders.collection_id=collections.id')
+			->join('catalogs', 'collections.catalog_id=catalogs.id')
+			->join('order_details', 'orders.id=order_details.order_id')
+			->get()
+			->result_object();
+		// return $this->db->get($this::TABLE_NAME)->result_object();
 	}
 
 	public function get($id)
