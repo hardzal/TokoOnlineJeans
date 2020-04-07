@@ -11,17 +11,17 @@
 - [x] Menu Promo 
 - [x] Menu Q&A via WhatsApp
 - [x] Tampilan Product
-- [ ] Filter Product
 - [x] Profil Perusahaan
-- [ ] Dashboard Customer
 - [x] Proses Order
 - [x] Proses Pembayaran
 - [x] Proses Konfirmasi Produk
+- [ ] Filter Product
+- [ ] Dashboard Customer
 - [ ] Invoice Pembayaran
 - [ ] Penghasilan Perbulan
 - [ ] Item Best Seller
-- [x] Data Pelanggan
 - [ ] Voucher Promo
+- [x] Data Pelanggan
 - [ ] Biaya Kirim (Manual)
 
 ## Concept Admin Template

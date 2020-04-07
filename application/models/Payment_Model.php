@@ -20,6 +20,21 @@ class Payment_Model extends CI_Model
 		return $this->db->get_where($this::TABLE_NAME, ['id' => $id])->row_object();
 	}
 
+	public function getDetail($id)
+	{
+		return $this->db->select('payments.*, users.username, user_details.nama_lengkap, users.email, collections.name as collection_name, collections.price, orders.status as order_status, order_details.quantity, order_details.address, order_details.description, sizes.size')
+			->from($this::TABLE_NAME)
+			->join('orders', 'orders.payment_id=payments.id')
+			->join('order_details', 'order_details.order_id=orders.id')
+			->join('sizes', 'sizes.id=order_details.size_id')
+			->join('collections', 'collections.id=orders.collection_id')
+			->join('users', 'orders.user_id=users.id')
+			->join('user_details', 'users.id=user_details.user_id')
+			->where('payments.id', $id)
+			->get()
+			->result_object();
+	}
+
 	public function insert($data)
 	{
 		return $this->db->insert($this::TABLE_NAME, $data);
@@ -33,5 +48,11 @@ class Payment_Model extends CI_Model
 	public function delete($id)
 	{
 		return $this->db->delete($this::TABLE_NAME, ['id' => $id]);
+	}
+
+	public function verify($status, $id)
+	{
+		$this->db->set('status', $status);
+		return $this->db->update($this::TABLE_NAME, ['id' => $id]);
 	}
 }

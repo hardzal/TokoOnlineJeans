@@ -113,10 +113,16 @@
 										<h3 class="product-title"><?php echo $collection->name; ?></h3>
 										<div class="product-price">Rp <?php echo number_format($collection->price, 0, ',', '.'); ?></div>
 									</div>
-									<div class="product-btn text-center">
-										<a href="#" class="btn btn-primary">Add to Cart</a>
-										<a href="<?php echo base_url('collection/') . $collection->code . "/" . $collection->permalink; ?>" title="<?php echo $collection->name; ?>" class="btn btn-outline-light">Details</a>
-									</div>
+									<form method="POST" action="<?php echo base_url('order/index'); ?>">
+										<div class="product-btn text-center">
+											<input type="hidden" name="size" value="2">
+											<input type="hidden" name="stock" value=1>
+											<input type="hidden" name="user_id" value="<?php echo $this->session->userdata('user_id'); ?>" />
+											<input type="hidden" name="collection_id" value="<?php echo $collection->id; ?>" />
+											<button type="submit" class="btn btn-primary">Add to Cart</button>
+											<a href="<?php echo base_url('collection/') . $collection->code . "/" . $collection->permalink; ?>" title="<?php echo $collection->name; ?>" class="btn btn-outline-light">Details</a>
+										</div>
+									</form>
 								</div>
 							</div>
 						</div>

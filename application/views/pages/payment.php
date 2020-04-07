@@ -21,16 +21,10 @@
 											Konfirmasi telah terkirim menunggu diproses oleh admin.<br>
 											Untuk mengecek status pembayaran klik <a href='<?php echo base_url('order/orderstatus'); ?>'>disini</a>
 										</p>
-										<script type="text/javascript">
-											let form = document.getElementById("paymentForm");
-											let elements = form.elements;
-											for (let i = 0, len = elements.length; i < len; ++i) {
-												elements[i].readOnly = true;
-											}
-										</script>
 									<?php
 									elseif ($this->session->userdata('order_late') > time()) :
 										$total = 0;
+										$total_quantity = 0;
 									?>
 										<div class="card-header">
 											<h4 class="mb-0">Form Pembayaran</h4>
@@ -89,7 +83,7 @@
 													<input type="hidden" name="quantity[]" value="<?php echo $order['quantity']; ?>" />
 													<hr class="mb-3">
 												<?php $total = $total + ($order['collection']->price * $order['quantity']);
-
+													$total_quantity = $total_quantity + $order['quantity'];
 												endforeach; ?>
 												<!-- <div class="d-flex justify-content-between my-2">
 											<label>Diskon Promo</label>

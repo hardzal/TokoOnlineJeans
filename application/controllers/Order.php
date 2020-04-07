@@ -205,6 +205,7 @@ class Order extends CI_Controller
 			];
 
 			if ($this->order->insertConfirmation($data)) {
+				unset($_SESSION['orders']);
 				$this->session->set_userdata('transactions', 2);
 				flash_message('success', 'Berhasil melakukan checkout', 'order/orderstatus');
 			} else {
