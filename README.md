@@ -16,11 +16,11 @@
 - [x] Proses Pembayaran
 - [x] Proses Konfirmasi Produk
 - [ ] Filter Product
-- [ ] Dashboard Customer
-- [ ] Invoice Pembayaran
+- [x] Dashboard Customer
+- [x] Invoice Pembayaran
 - [ ] Penghasilan Perbulan
 - [ ] Item Best Seller
-- [ ] Voucher Promo
+- [x] Voucher Promo
 - [x] Data Pelanggan
 - [ ] Biaya Kirim (Manual)
 

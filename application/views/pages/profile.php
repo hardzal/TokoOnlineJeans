@@ -69,7 +69,10 @@
                     <div class="influence-profile-content pills-regular">
                         <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="pills-msg-tab" data-toggle="pill" href="#pills-msg" role="tab" aria-controls="pills-msg" aria-selected="false">Edit Profile</a>
+                                <a class="nav-link active" id="pills-msg-tab" data-toggle="pill" href="#pills-msg" role="tab" aria-controls="pills-msg" aria-selected="false">List Order</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-msg-tab" data-toggle="pill" href="#pills-msg2" role="tab" aria-controls="pills-msg" aria-selected="false">Edit Profile</a>
                             </li>
                         </ul>
                         <?php if (validation_errors()) : ?>
@@ -82,6 +85,40 @@
                         <div class="tab-content" id="pills-tabContent">
                             
                             <div class="tab-pane fade show active" id="pills-msg" role="tabpanel" aria-labelledby="pills-msg-tab">
+                                <div class="card">
+                                    <h5 class="card-header">List Order</h5>
+                                    <div class="card-body">
+                                        <!-- <form class="needs-validation" method="POST" action="" id="userForm"> -->
+                                            <div class="row">
+                                                <div >
+                                                    
+                                                </div>
+                                                <div class="offset-xl-12 col-xl-12 offset-lg-12 col-lg-12 col-md-12 col-sm-12 col-12 p-4">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item d-flex justify-content-between">
+                                                            <div class="d-flex justify-content-between">
+                                                                <img width="128px" height="128px" class="img-fluid" src="<?=base_url('assets/images/avatar-1.jpg')?>" alt="gambar">
+                                                                <div class="ml-3">
+                                                                    <h4 class="my-0">Nama Barang</h4>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div>
+                                                                    <span style="font-size: 20px;" class="text-muted">Rp 1.000.000</span>
+                                                                </div>
+                                                                <div class="align-left mt-2">
+                                                                    <span style="font-size: 16px;" class="text-muted">Sudah Dibayar</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        <!-- </form> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade " id="pills-msg2" role="tabpanel" aria-labelledby="pills-msg-tab">
                                 <div class="card">
                                     <h5 class="card-header">Edit Profile</h5>
                                     <div class="card-body">

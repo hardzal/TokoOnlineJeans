@@ -69,9 +69,9 @@
 													<td><?php echo $payment->created_at; ?></td>
 													<td><?php echo date('Y-m-d H:i:s', strtotime($payment->created_at) + 3600); ?></td>
 													<td><?php echo status_button($payment->status); ?></td>
-													<td class="text-center align-center">
-														<a class="btn btn-xs btn-primary mr-3" href="#"><i class="fas fa-print"></i></a>
-														<a class="btn btn-xs btn-warning mr-3 editOrder" href="<?php echo base_url('admin/payment/verify/') . $payment->id; ?>" target="_blank"><i class="fas fa-edit"></i></a>
+													<td class="text-center row mx-0 w-100">
+														<a class="btn btn-xs btn-primary " href="#"><i class="fas fa-print"></i></a>
+														<a class="btn btn-xs btn-warning  editOrder" href="<?php echo base_url('admin/payment/verify/') . $payment->id; ?>" target="_blank"><i class="fas fa-edit"></i></a>
 														<a class="btn btn-xs btn-danger" href="<?php echo base_url('admin/payment/delete/') . $payment->id; ?>" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i></a>
 													</td>
 												</tr>

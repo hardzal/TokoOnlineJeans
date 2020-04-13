@@ -27,7 +27,7 @@
 									foreach ($orders as $key => $order) : ?>
 										<li class="list-group-item d-flex justify-content-between">
 											<div class="d-flex justify-content-between">
-												<img width="128px" height="128px" class="img-fluid" src="<?= base_url() ?>assets/images/collections/<?php echo @$order['collection']->img; ?>">
+												<img width="128px" height="128px" class="img-fluid" src="<?= base_url() ?>assets/images/collections/<?php echo @$order['collection']->img; ?>" >
 												<div class="ml-3">
 													<h4 class="my-0"><?php echo @$order['collection']->name; ?></h4>
 													<div class="form-group row">
