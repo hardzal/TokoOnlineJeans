@@ -90,9 +90,6 @@
                                     <div class="card-body">
                                         <!-- <form class="needs-validation" method="POST" action="" id="userForm"> -->
                                             <div class="row">
-                                                <div >
-                                                    
-                                                </div>
                                                 <div class="offset-xl-12 col-xl-12 offset-lg-12 col-lg-12 col-md-12 col-sm-12 col-12 p-4">
                                                     <ul class="list-group">
                                                         <li class="list-group-item d-flex justify-content-between">
@@ -106,9 +103,14 @@
                                                                 <div>
                                                                     <span style="font-size: 20px;" class="text-muted">Rp 1.000.000</span>
                                                                 </div>
-                                                                <div class="align-left mt-2">
-                                                                    <span style="font-size: 16px;" class="text-muted">Sudah Dibayar</span>
+                                                                <div class="text-center">
+                                                                    <a href="<?=base_url('customer/detail_order')?>" class="btn btn-success btn-xs mt-3" class="">Detail</a>
+                                                                    <!-- <a href="" class="btn btn-warning btn-xs mt-3" class="">Edit</a> -->
+                                                                    <a href="" class="btn btn-danger btn-xs mt-3" class="">Hapus</a>
                                                                 </div>
+                                                                <!-- <div class="align-left mt-2">
+                                                                    <span style="font-size: 16px;" class="text-muted">Sudah Dibayar</span>
+                                                                </div> -->
                                                             </div>
                                                         </li>
                                                     </ul>

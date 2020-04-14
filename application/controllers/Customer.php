@@ -90,7 +90,18 @@ class Customer extends CI_Controller
 				flash_message('danger', '<strong>Gagal</strong> <em>memperbaharui</em> Password Pengguna', 'customer/ubahPassword');
 			}
 		}
-
-		
 	}
+
+
+	public function detail_order(){
+
+		$data['title'] = "Detail Order Pengguna";
+		$this->load->model('User_Model', 'user');
+		$data['users'] = $this->user->get($_SESSION['user_id']);
+
+		$this->load->view("templates/header", $data);
+		$this->load->view("pages/detail-order");
+		$this->load->view("templates/footer");
+	}
+		
 }
