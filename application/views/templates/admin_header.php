@@ -97,7 +97,13 @@
 								<a href="<?= base_url(); ?>admin/methodpayments" class="nav-link"><i class="fab fa-cc-amazon-pay"></i>Data Metode Pembayaran</a>
 							</li>
 							<li class="nav-item">
+								<a href="<?= base_url(); ?>admin/promotes" class="nav-link"><i class="fas fa-percent"></i>Data Promo</a>
+							</li>
+							<li class="nav-item">
 								<a href="<?= base_url(); ?>admin/profile" class="nav-link"><i class="fas fa-user"></i>Edit Profile</a>
+							</li>
+							<li class="nav-item">
+								<a href="<?= base_url(); ?>admin/profile" class="nav-link"><i class="fas fa-sign-out-alt"></i>Logout</a>
 							</li>
 						</ul>
 					</div>

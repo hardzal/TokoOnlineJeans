@@ -105,6 +105,12 @@ class Collection extends CI_Controller
 			}
 		} else {
 			$collection_id = $this->input->post('koleksi_id', true);
+			$vouchers = [];
+			foreach ($this->input->post('voucher', true) as $voucher) {
+				$vouchers[] = [
+					'kode' => $voucher
+				];
+			}
 
 			$data = [
 				'catalog_id' => $this->input->post('katalog', true),
@@ -129,12 +135,12 @@ class Collection extends CI_Controller
 					}
 				}
 
-				if ($this->upload->do_upload('image', $config)) {
-					$image_name = $this->upload->data('file_name');
-				} else {
+				if (!$this->upload->do_upload('image', $config)) {
 					flash_message('danger', '<strong>Gagal</strong> Mengupload gambar : ' . $this->upload->display_errors('<p class="text-danger">', '</p>'), 'admin/koleksi');
 				}
 
+				$file_name = explode('.', $_FILES['image']['name']);
+				$image_name = strtolower($file_name[0] . "-" . time() . "." . $file_name[1]);
 				$data['img'] = $image_name;
 			}
 

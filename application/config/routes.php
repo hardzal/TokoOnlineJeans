@@ -72,3 +72,10 @@ $route['admin/tags'] = 'Tags/list';
 
 $route['admin/payment/verify/(:any)'] = 'payment/verify/$1';
 $route['admin/payment/delete/(:any)'] = 'payment/delete/$1';
+
+
+$route['admin/promotes'] = 'Promo/list';
+$route['admin/promo/create'] = 'Promo/create';
+$route['admin/promo/edit/(:any)'] = 'Promo/edit/$1';
+$route['admin/promo/hapus/(:any)'] = 'Promo/delete/$1';
+$route['admin/promo/detail/(:any)'] = 'Promo/detail/$1';

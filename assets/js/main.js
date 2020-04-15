@@ -221,4 +221,48 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	$('#tambahVoucher').on('click', function (e) {
+		e.preventDefault();
+		let i = $(this).data('id');
+		i++;
+		$(this).parent().parent().parent().append(`
+		<div class="row mt-3">
+			<div class="col-sm-8">
+				<input name="voucher[]" class="form-control" id="voucher` + parseInt(i) + `" />
+			</div>
+			<div class="col-sm-4">
+				<button type="button" class="btn btn-xs btn-secondary kurangVoucher"><i class="fas fa-minus-circle"></i></button>
+			</div>
+		</div>
+		`);
+		$(this).data('id', i);
+	});
+
+	$(document).on('click', '.kurangVoucher', function (e) {
+		e.preventDefault();
+		$(this).parent().parent().remove();
+	});
+
+	$('#tambahSyarat').on('click', function (e) {
+		e.preventDefault();
+		let i = $(this).data('id');
+		i++;
+		$(this).parent().parent().parent().append(`
+		<div class="row mt-3">
+			<div class="col-sm-8">
+				<input name="syarat[]" class="form-control" id="syarat` + parseInt(i) + `" />
+			</div>
+			<div class="col-sm-4">
+				<button type="button" class="btn btn-xs btn-secondary kurangSyarat"><i class="fas fa-minus-circle"></i></button>
+			</div>
+		</div>
+		`);
+		$(this).data('id', i);
+	});
+
+	$(document).on('click', '.kurangSyarat', function (e) {
+		e.preventDefault();
+		$(this).parent().parent().remove();
+	});
 });

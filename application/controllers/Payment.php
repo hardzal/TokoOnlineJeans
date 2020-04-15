@@ -25,9 +25,9 @@ class Payment extends CI_Controller
 			$id_payment = $this->input->post('id', true);
 
 			if ($this->payment->verify($status, $id_payment)) {
-				flash_message('success', 'Berhasil menverifikasi pembayaran', 'admin/payment');
+				flash_message('success', 'Berhasil menverifikasi pembayaran', 'admin/payments');
 			} else {
-				flash_message('danger', 'Gagal menverifikasi pembayaran', 'admin/payment');
+				flash_message('danger', 'Gagal menverifikasi pembayaran', 'admin/payments');
 			}
 		}
 	}

@@ -5,12 +5,12 @@
 	<div class="row">
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 			<div class="page-header">
-				<h2 class="pageheader-title">Data Pembayaran</h2>
+				<h2 class="pageheader-title">Data Promo</h2>
 				<div class="page-breadcrumb">
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Master Data</a></li>
-							<li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Data Pembayaran</a></li>
+							<li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Data Promo</a></li>
 						</ol>
 					</nav>
 				</div>
@@ -29,7 +29,9 @@
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 					<div class="card">
 						<div class="card-header">
-							<p>Terhitung sejak <?php echo date('d F Y H:i:s', time()); ?> terdapat Data Pembayaran sebanyak <?php echo count($payments); ?> dengan Data Order sejumlah y</p>
+							<a href="<?php echo base_url('admin/promo/create'); ?>" class="btn btn-success" id="tambahPromo" data-link="<?php echo base_url('admin/promo/create'); ?>">
+								Tambahkan Data
+							</a>
 						</div>
 						<?php if (validation_errors()) : ?>
 							<div class="alert alert-danger">
@@ -38,42 +40,37 @@
 						<?php endif; ?>
 						<?php echo $this->session->flashdata('message'); ?>
 						<div class="card-body">
-							<?php if (empty($payments)) : ?>
-								<p class="alert alert-info">Tidak ada data pembayaran</p>
+							<?php if (empty($promotes)) : ?>
+								<p class="alert alert-info">Tidak ada data Promo</p>
 							<?php else :
 								$no = 1;
 							?>
 								<div class="table-responsive">
-									<a href="#" class="btn btn-primary">Export Data Penghasilan</a>
 									<table id="example" class="table table-striped table-bordered second" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
-												<th>Kode Pembayaran</th>
-												<th>Username</th>
-												<th>Total Barang</th>
-												<th>Total Pembayaran</th>
-												<th>Waktu Checkout</th>
-												<th>Batas Pembayaran</th>
+												<th>Judul</th>
+												<th>Persentase</th>
+												<th>Waktu Mulai</th>
+												<th>Waktu Selesai</th>
 												<th>Status</th>
 												<th class="text-center">Aksi</th>
 											</tr>
 										</thead>
 										<tbody>
-											<?php foreach ($payments as $payment) : ?>
+											<?php foreach ($promotes as $promo) : ?>
 												<tr>
 													<td><?php echo $no++; ?></td>
-													<td><?php echo $payment->paymentCode; ?></td>
-													<td><?php echo $payment->username; ?></td>
-													<td><?php echo $payment->total_quantity; ?></td>
-													<td>Rp <?php echo idr_format($payment->total_quantity * $payment->total_price); ?></td>
-													<td><?php echo $payment->created_at; ?></td>
-													<td><?php echo date('Y-m-d H:i:s', strtotime($payment->created_at) + 3600); ?></td>
-													<td><?php echo status_button($payment->status); ?></td>
-													<td class="text-center row mx-0 w-100">
-														<a class="btn btn-xs btn-primary mr-2" href="#"><i class="fas fa-print"></i></a>
-														<a class="btn btn-xs btn-warning mr-2 editOrder" href="<?php echo base_url('admin/payment/verify/') . $payment->id; ?>" target="_blank"><i class="fas fa-edit"></i></a>
-														<a class="btn btn-xs btn-danger" href="<?php echo base_url('admin/payment/delete/') . $payment->id; ?>" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i></a>
+													<td><?php echo $promo->title; ?></td>
+													<td><?php echo $promo->persen; ?> %</td>
+													<td><?php echo $promo->start_at; ?></td>
+													<td><?php echo $promo->end_at; ?></td>
+													<td><?php echo status_aktif($promo->status); ?></td>
+													<td class="text-center">
+														<a class="btn btn-primary btn-xs mr-3" href="<?php echo base_url('admin/promo/detail/') . $promo->id; ?>"><i class="fas fa-eye"></i></a>
+														<a class="btn btn-xs btn-warning mr-3" href="<?php echo base_url('admin/promo/edit/') . $promo->id; ?>"><i class="far fa-edit"></i></a>
+														<a class="btn btn-xs btn-danger" href="<?php echo base_url('admin/promo/hapus/') . $promo->id; ?>" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?')"><i class="far fa-trash-alt"></i></a>
 													</td>
 												</tr>
 											<?php endforeach; ?>
@@ -84,7 +81,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- ============================================================== -->
+				<!--==============================================================-->
 				<!-- end data table  -->
 				<!-- ============================================================== -->
 			</div>
