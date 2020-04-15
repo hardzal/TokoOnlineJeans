@@ -59,9 +59,9 @@ $route['admin/koleksi'] = 'collection/list';
 $route['admin/koleksi/hapus/(:any)'] = 'collection/delete/$1';
 $route['admin/koleksi/edit'] = 'collection/edit';
 
-$route['admin/faq'] = 'faq/list';
+$route['admin/faq'] = 'FAQ/list';
 
-$route['admin/methodpayments'] = 'methodpayment/list';
+$route['admin/methodpayments'] = 'MethodPayment/list';
 
 $route['catalog/(:any)'] = 'catalog/index/$1';
 
@@ -72,3 +72,10 @@ $route['admin/tags'] = 'Tags/list';
 
 $route['admin/payment/verify/(:any)'] = 'payment/verify/$1';
 $route['admin/payment/delete/(:any)'] = 'payment/delete/$1';
+
+
+$route['admin/promotes'] = 'Promo/list';
+$route['admin/promo/create'] = 'Promo/create';
+$route['admin/promo/edit/(:any)'] = 'Promo/edit/$1';
+$route['admin/promo/hapus/(:any)'] = 'Promo/delete/$1';
+$route['admin/promo/detail/(:any)'] = 'Promo/detail/$1';

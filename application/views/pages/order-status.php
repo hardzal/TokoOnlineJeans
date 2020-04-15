@@ -79,12 +79,12 @@
 									</td>
 									<td class="right">-</td>
 								</tr>
-								<!-- <tr>
-                                <td class="left">
-                                    <strong class="text-dark">VAT (10%)</strong>
-                                </td>
-                                <td class="right">$2,304,00</td>
-                            </tr> -->
+								<tr>
+									<td class="left">
+										<strong class="text-dark">Biaya Kirim</strong>
+									</td>
+									<td class="right">-</td>
+								</tr>
 								<tr>
 									<td class="left">
 										<strong class="text-dark">Total</strong>

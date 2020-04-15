@@ -51,10 +51,19 @@ function idr_format($number)
 	return number_format($number, 0, ',', '.');
 }
 
+function status_aktif($status, $message = 'Aktif')
+{
+	if ($status) {
+		return "<span class='badge badge-success'>" . $message . "</span>";
+	}
+
+	return "<span class='badge badge-danger'>Tidak " . $message . "</span>";
+}
+
 function status_button($status)
 {
 	if ($status) {
-		return "<span class='badge badge-success'>Sukses</span>";
+		return "<span class='badge badge-success'>Sudah dibayar</span>";
 	}
 
 	return "<span class='badge badge-danger'>Belum dibayar</span>";

@@ -15,7 +15,6 @@ class Order_Model extends CI_Model
 			->join('order_details', 'orders.id=order_details.order_id')
 			->get()
 			->result_object();
-		// return $this->db->get($this::TABLE_NAME)->result_object();
 	}
 
 	public function get($id)
@@ -94,5 +93,19 @@ class Order_Model extends CI_Model
 	public function getOrderDetails($order_id)
 	{
 		return $this->db->get_where('order_details', ['order_id' => $order_id])->row_object();
+	}
+
+	public function getCustomerOrders($id)
+	{
+		return $this->db->select('orders.*, order_details.id as order_details_id, order_details.size_id, order_details.quantity, order_details.address, order_details.description, collections.code, collections.name, collections.img, collections.description as description_collection, collections.price, sizes.size')
+			->from($this::TABLE_NAME)
+			->join('users', 'orders.user_id = users.id')
+			->join('order_details', 'orders.id = order_details.order_id')
+			->join('collections', 'orders.collection_id = collections.id')
+			->join('sizes', 'sizes.id = order_details.size_id')
+			->where('users.id', $id)
+			->order_by('orders.status', 'ASC')
+			->get()
+			->result_object();
 	}
 }

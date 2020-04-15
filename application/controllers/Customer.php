@@ -6,14 +6,15 @@ class Customer extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('User_Model', 'user');
+		$this->load->model('Order_Model', 'order');
 	}
 
 	public function index()
 	{
 		$data['title'] = "Profil Pengguna";
-		$this->load->model('User_Model', 'user');
 		$data['users'] = $this->user->get($_SESSION['user_id']);
-
+		$data['orders'] = $this->order->getCustomerOrders($_SESSION['user_id']);
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		// $this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|is_unique[users.username]');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|min_length[4]|valid_email');
@@ -66,7 +67,7 @@ class Customer extends CI_Controller
 		$this->form_validation->set_rules('passLama', 'Password Lama', 'required|trim|min_length[4]');
 		$this->form_validation->set_rules('passBaru', 'Password Baru', 'required|trim|min_length[4]');
 		$this->form_validation->set_rules('konfirmasi', 'Konfirmasi Password Baru', 'required|trim|min_length[4]|matches[passBaru]');
-		
+
 
 		if ($this->form_validation->run() == false) {
 			$this->load->view("templates/header", $data);
@@ -90,7 +91,17 @@ class Customer extends CI_Controller
 				flash_message('danger', '<strong>Gagal</strong> <em>memperbaharui</em> Password Pengguna', 'customer/ubahPassword');
 			}
 		}
+	}
 
-		
+
+	public function detail_order()
+	{
+		$data['title'] = "Detail Order Pengguna";
+		$this->load->model('User_Model', 'user');
+		$data['users'] = $this->user->get($_SESSION['user_id']);
+
+		$this->load->view("templates/header", $data);
+		$this->load->view("pages/detail-order");
+		$this->load->view("templates/footer");
 	}
 }

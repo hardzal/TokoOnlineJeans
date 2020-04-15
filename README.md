@@ -5,8 +5,8 @@
 - [x] CRUD Collection
 - [x] CRUD Catalog 
 - [x] CRUD Q&A
-- [ ] CRUD Order
-- [ ] CRUD Payment
+- [x] CRUD Order
+- [x] CRUD Payment
 - [x] Menu Shopping Cart
 - [x] Menu Promo 
 - [x] Menu Q&A via WhatsApp
@@ -16,13 +16,13 @@
 - [x] Proses Pembayaran
 - [x] Proses Konfirmasi Produk
 - [ ] Filter Product
-- [ ] Dashboard Customer
-- [ ] Invoice Pembayaran
+- [x] Dashboard Customer
+- [x] Invoice Pembayaran
 - [ ] Penghasilan Perbulan
 - [ ] Item Best Seller
-- [ ] Voucher Promo
-- [x] Data Pelanggan
 - [ ] Biaya Kirim (Manual)
+- [x] Voucher Promo
+- [x] Data Pelanggan
 
 ## Concept Admin Template
 #### Tampilan
@@ -54,5 +54,13 @@
 -------------
 # User Login
 - admin:secret [admin]
-- customer:password [customer]
+- first_customer:password [customer]
 ------------------
+- [x] Membuat crud promo dan voucher
+- [ ] Menghubungkan dengan order denga voucher promo
+- [ ] Membuat CRUD order (customer)
+- [ ] Membuat print voucher, print invoice
+- [ ] Membuat tampilan collection per tag / category
+- [ ] Menambahkan data tag pada collection
+- [ ] Membuat Data print best seller dan data penghasilan
+- [ ] Membuat filter data.
