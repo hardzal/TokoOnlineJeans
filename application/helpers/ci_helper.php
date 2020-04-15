@@ -63,7 +63,7 @@ function status_aktif($status, $message = 'Aktif')
 function status_button($status)
 {
 	if ($status) {
-		return "<span class='badge badge-success'>Sukses</span>";
+		return "<span class='badge badge-success'>Sudah dibayar</span>";
 	}
 
 	return "<span class='badge badge-danger'>Belum dibayar</span>";
